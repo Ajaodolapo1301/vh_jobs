@@ -6,16 +6,17 @@ class ShimmerWidget extends StatelessWidget {
   final double? width;
   final ShapeBorder shapeBorder;
 
-  const ShimmerWidget.rectangle({this.width = double.infinity, this.height}): this.shapeBorder = const  RoundedRectangleBorder();
+  const ShimmerWidget.rectangle({this.width = double.infinity, this.height})
+      : this.shapeBorder = const RoundedRectangleBorder();
 
-  const ShimmerWidget.circle({this.width = double.infinity, this.height}): this.shapeBorder = const CircleBorder();
-
+  const ShimmerWidget.circle({this.width = double.infinity, this.height})
+      : this.shapeBorder = const CircleBorder();
 
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Color(0xffEEEFF2),
-      highlightColor: Color(0xffEEEFF2).withOpacity(0.4),
+      baseColor: const Color(0xffEEEFF2),
+      highlightColor: const Color(0xffEEEFF2).withOpacity(0.4),
       child: Container(
         width: width,
         height: height,
