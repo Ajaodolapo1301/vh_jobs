@@ -29,19 +29,19 @@ class _OrdersState extends State<Orders> {
             Image.asset('assets/svgs/onboarding/order1.png'),
       Column(
 
-        children: const [
+        children:  [
           Text('Orders',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 15
+              fontSize: 15.sp
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 20.h,),
           Text('Subcribe for packages or hire professionals! Your orders will show up here',
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontWeight: FontWeight.w300,
-                fontSize: 15
+                fontSize: 15.sp
             ),
           ),
         ],
