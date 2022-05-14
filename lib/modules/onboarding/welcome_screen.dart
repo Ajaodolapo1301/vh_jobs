@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vh_jobs/config/app_startup.dart';
+import 'package:vh_jobs/modules/orders/route/routes.dart';
+import 'package:vh_jobs/shared/navigation/navigation_service.dart';
 import 'package:vh_jobs/shared/widgets/appbars/vhjob_appbar.dart';
 
 import '../../shared/utils/asset_images.dart';
@@ -121,7 +124,9 @@ class _WelcomePageState extends State<WelcomePage> {
 
             VhJobsButton(
               text: "Continue",
-              onPressed: first != null || second != null ? () {} : null,
+              onPressed: first != null || second != null ? () {
+                serviceLocator<NavigationService>().to(routeName: OrderRoutes.root);
+              } : null,
             ),
             // InkWell(
             //   onTap: () {},
