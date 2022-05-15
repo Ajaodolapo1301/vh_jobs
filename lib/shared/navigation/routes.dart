@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../modules/onboarding/root.dart';
 import '../../modules/onboarding/route/routes.dart';
 import '../../modules/onboarding/welcome_screen.dart';
 import '../../modules/onboarding/widget/splash_screen.dart';
@@ -15,7 +16,7 @@ var routes = (RouteSettings settings) {
 
     case OnboardingRoutes.onboardingScreen:
       return FadeRoute(
-        page: const SplashScreen(),
+        page: const OnboardingScreen(),
       );
 
     case OnboardingRoutes.welcomePage:
