@@ -4,8 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get_it/get_it.dart';
+import 'package:vh_jobs/modules/onboarding/route/routes.dart';
 import 'package:vh_jobs/modules/onboarding/widget/indicator/dot_indicator.dart';
 
+import '../../shared/navigation/navigation_service.dart';
 import '../../shared/utils/asset_images.dart';
 import '../../shared/utils/colors.dart';
 import 'model/data.dart';
@@ -166,7 +169,11 @@ class _OnboardingScreenState extends State<OnboardingScreen>
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      GetIt.I
+                          .get<NavigationService>()
+                          .to(routeName: OnboardingRoutes.welcomePage);
+                    },
                     child: Text(
                       "Skip Now",
                       style: TextStyle(

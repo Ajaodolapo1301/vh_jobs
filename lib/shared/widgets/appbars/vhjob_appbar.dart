@@ -10,7 +10,7 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? titleText;
   final Widget? titleWidget;
   final Widget? trailing;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final bool centerTitle;
   final double? elevation;
   final Color? shadowColor;
@@ -24,9 +24,9 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.titleWidget,
       this.trailing,
       this.centerTitle = true,
-      this.elevation = 0,
+      this.elevation = 2,
       this.shadowColor = Colors.white,
-      required this.backgroundColor,
+      this.backgroundColor = Colors.white,
       this.leadingWidth = 56.0,
       this.appHeight = 60})
       : super(key: key);
@@ -41,9 +41,9 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
 
       toolbarHeight: 94.h,
       automaticallyImplyLeading: false,
-      title: titleText == null && titleWidget == null
+      title: titleText == null && !centerTitle
           ? const SizedBox()
-          : titleWidget != null && titleText == null
+          : centerTitle && titleText == null
               ? SvgPicture.asset(
                   AssetResources.smallLogo,
                   width: 30.w,
@@ -63,7 +63,7 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
                           fontWeight: FontWeight.w700,
                           height: 1.4),
                 ),
-      centerTitle: centerTitle,
+      // centerTitle: centerTitle,
       leading: leadingIcon ??
           IconButton(
             onPressed: () {

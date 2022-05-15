@@ -4,7 +4,11 @@ import '../../modules/onboarding/root.dart';
 import '../../modules/onboarding/route/routes.dart';
 import '../../modules/onboarding/welcome_screen.dart';
 import '../../modules/onboarding/widget/splash_screen.dart';
+import '../../modules/root/root.dart';
+import '../../modules/root/route/routes.dart';
+import '../../modules/root/widgets/bottom_nav.dart';
 import 'animations/fade_route.dart';
+import 'animations/slide_up.dart';
 
 // ignore: prefer_function_declarations_over_variables
 var routes = (RouteSettings settings) {
@@ -23,5 +27,12 @@ var routes = (RouteSettings settings) {
       return FadeRoute(
         page: const WelcomePage(),
       );
+    //  Root
+    case RootRoutes.home:
+      Tabs currentTab = Tabs.home;
+      return SlideUpRoute(
+          page: RootWidget(
+        currentTab: currentTab,
+      ));
   }
 };

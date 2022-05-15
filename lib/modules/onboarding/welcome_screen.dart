@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vh_jobs/config/app_startup.dart';
 import 'package:vh_jobs/shared/widgets/appbars/vhjob_appbar.dart';
 
+import '../../shared/navigation/navigation_service.dart';
 import '../../shared/utils/asset_images.dart';
 import '../../shared/utils/colors.dart';
 import '../../shared/widgets/button.dart';
+import '../root/route/routes.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -46,7 +49,7 @@ class _WelcomePageState extends State<WelcomePage> {
             Text(
               'Want do you want to do',
               style: TextStyle(
-                fontSize: 18.sp,
+                fontSize: 15.sp,
                 fontWeight: FontWeight.w300,
               ),
             ),
@@ -69,6 +72,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       color:
                           first != null && first! ? Colors.white : Colors.black,
                       fontSize: 15.sp,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ),
@@ -78,8 +82,8 @@ class _WelcomePageState extends State<WelcomePage> {
                     color: first != null && first!
                         ? AppColors.vhBlue
                         : Colors.white),
-                width: 213,
-                height: 98,
+                width: 213.w,
+                height: 98.h,
               ),
             ),
             SizedBox(height: 20.h),
@@ -99,10 +103,11 @@ class _WelcomePageState extends State<WelcomePage> {
                       'I am professional, i want to be a service provider',
                       textAlign: TextAlign.center,
                       style: TextStyle(
+                        fontWeight: FontWeight.w400,
                         color: second != null && second!
                             ? Colors.white
                             : Colors.black,
-                        fontSize: 15.sp,
+                        fontSize: 14.sp,
                       ),
                     ),
                   ),
@@ -121,7 +126,12 @@ class _WelcomePageState extends State<WelcomePage> {
 
             VhJobsButton(
               text: "Continue",
-              onPressed: first != null || second != null ? () {} : null,
+              onPressed: first != null || second != null
+                  ? () {
+                      serviceLocator<NavigationService>()
+                          .to(routeName: RootRoutes.home);
+                    }
+                  : null,
             ),
             // InkWell(
             //   onTap: () {},
@@ -140,7 +150,7 @@ class _WelcomePageState extends State<WelcomePage> {
             //     height: 45,
             //   ),
             // ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 48.h),
             Text('Need Help ?')
           ],
         ),
