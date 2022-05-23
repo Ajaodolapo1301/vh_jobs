@@ -42,4 +42,6 @@ class AssetResources {
 
   static const filter = "assets/images/profile/mi_filter.svg";
   static const inflow = "assets/images/profile/inflow.svg";
+
+  static const calendar = "assets/images/profile/icons_calendar.svg";
 }

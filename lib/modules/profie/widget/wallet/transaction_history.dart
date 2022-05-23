@@ -79,7 +79,9 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                       child: InputText(
                           suffixIcon: Padding(
                             padding: EdgeInsets.only(left: 15.w, right: 10.w),
-                            child: const Icon(Icons.calendar_today),
+                            child: const VhCacheImage(
+                              imgUrl: AssetResources.calendar,
+                            ),
                           ),
                           onTap: () {},
                           keyboardType: TextInputType.visiblePassword,
