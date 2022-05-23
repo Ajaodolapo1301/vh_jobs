@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vh_jobs/modules/auth/root.dart';
+import 'package:vh_jobs/modules/auth/route/routes.dart';
 
 import '../../modules/onboarding/route/routes.dart';
 import '../../modules/onboarding/welcome_screen.dart';
@@ -41,6 +43,12 @@ var routes = (RouteSettings settings) {
     case OrderRoutes.root2:
       return FadeRoute(
         page: const Orders2(),
+      );
+
+
+    case AuthRoutes.root2:
+      return FadeRoute(
+        page: const SignUpPage(),
       );
 
   }
