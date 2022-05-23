@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/colors.dart';
 
+enum ButtonType { outlined, filled }
+
 class VhJobsButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final Widget? child;
@@ -13,6 +15,7 @@ class VhJobsButton extends StatelessWidget {
   final Color? color, borderColor, textColor;
   final double? height;
   final double? width;
+  final ButtonType type;
   const VhJobsButton(
       {Key? key,
       this.onPressed,
@@ -21,6 +24,7 @@ class VhJobsButton extends StatelessWidget {
       this.fontSize,
       this.color,
       this.borderColor,
+      this.type = ButtonType.filled,
       this.textColor,
       this.verticalPadding,
       this.horizontalPadding,
@@ -31,34 +35,63 @@ class VhJobsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-            primary: color ?? AppColors.vhBlue,
-            onSurface: color ?? AppColors.vhBlue,
-            elevation: 0.0,
-            shadowColor: Colors.transparent,
-            padding: EdgeInsets.symmetric(
-                vertical: verticalPadding ?? 15.h,
-                horizontal: horizontalPadding ?? 0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.r),
-              side: BorderSide(
-                  color: onPressed == null
-                      ? Colors.transparent
-                      : borderColor ?? color ?? AppColors.vhBlue as Color),
-            ),
-            minimumSize: Size(width ?? double.infinity, height ?? 45.h)),
-        child: text != null ? Text(text!, style: buttonTextStyle()) : child);
+    if (type == ButtonType.filled) {
+      return ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+              primary: color ?? AppColors.vhBlue,
+              onSurface: color ?? AppColors.vhBlue,
+              elevation: 0.0,
+              shadowColor: Colors.transparent,
+              padding: EdgeInsets.symmetric(
+                  vertical: verticalPadding ?? 15.h,
+                  horizontal: horizontalPadding ?? 0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.r),
+                side: BorderSide(
+                    color: onPressed == null
+                        ? Colors.transparent
+                        : borderColor ?? color ?? AppColors.vhBlue as Color),
+              ),
+              minimumSize: Size(width ?? double.infinity, height ?? 45.h)),
+          child: text != null ? Text(text!, style: buttonTextStyle()) : child);
+    } else {
+      return ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+              primary: Colors.white,
+              // onSurface: color ?? AppColors.vhBlue,
+              // elevation: 0.0,
+              // shadowColor: Colors.transparent,
+              padding: EdgeInsets.symmetric(
+                  vertical: verticalPadding ?? 15.h,
+                  horizontal: horizontalPadding ?? 0),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.r),
+                  side: BorderSide(
+                    color: AppColors.vhBlue,
+                  )),
+              minimumSize: Size(width ?? double.infinity, height ?? 45.h)),
+          child: text != null ? Text(text!, style: buttonTextStyle()) : child);
+    }
   }
 
   buttonTextStyle() {
-    return TextStyle(
-      fontSize: fontSize ?? 16.sp,
-      color: textColor ?? borderColor ?? Colors.white,
-      fontStyle: FontStyle.normal,
-      fontWeight: FontWeight.w400,
-    );
+    if (type == ButtonType.filled) {
+      return TextStyle(
+        fontSize: fontSize ?? 16.sp,
+        color: textColor ?? borderColor ?? Colors.white,
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w400,
+      );
+    } else {
+      return TextStyle(
+        fontSize: fontSize ?? 16.sp,
+        color: AppColors.vhBlue,
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w400,
+      );
+    }
   }
 }
 
