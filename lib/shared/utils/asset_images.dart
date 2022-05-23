@@ -13,15 +13,17 @@ class AssetResources {
   static const thickArrow = "assets/images/onboarding/thickArrow.svg";
 
   // HOME unselected
-  static const unSelectedAppointment = "assets/images/home/appointment.svg";
-  static const unSelectedOrder = "assets/images/home/order.svg";
-  static const unSelectedProfile = "assets/images/home/profile.svg";
-  static const unselectedHome = "assets/images/home/home-outlined.svg";
+  static const unSelectedAppointment =
+      "assets/images/dashboard/appointment.svg";
+  static const unSelectedOrder = "assets/images/dashboard/order.svg";
+  static const unSelectedProfile = "assets/images/dashboard/profile.svg";
+  static const unselectedHome =
+      "assets/images/dashboard/dashboard-outlined.svg";
 
-  static const selectedAppointment = "assets/images/home/appointment.svg";
-  static const selectedOrder = "assets/images/home/selectedOrder.svg";
-  static const selectedProfile = "assets/images/home/selectedProfile.svg";
-  static const selectedHome = "assets/images/home/home-filled.svg";
+  static const selectedAppointment = "assets/images/dashboard/appointment.svg";
+  static const selectedOrder = "assets/images/dashboard/selectedOrder.svg";
+  static const selectedProfile = "assets/images/dashboard/selectedProfile.svg";
+  static const selectedHome = "assets/images/dashboard/dashboard-filled.svg";
 
 //  Profile
 
