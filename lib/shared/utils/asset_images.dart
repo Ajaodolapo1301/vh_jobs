@@ -19,8 +19,8 @@ class AssetResources {
   static const unselectedHome = "assets/images/home/home-outlined.svg";
 
   static const selectedAppointment = "assets/images/home/appointment.svg";
-  static const selectedOrder = "assets/images/home/order.svg";
-  static const selectedProfile = "assets/images/home/profile.svg";
+  static const selectedOrder = "assets/images/home/selectedOrder.svg";
+  static const selectedProfile = "assets/images/home/selectedProfile.svg";
   static const selectedHome = "assets/images/home/home-filled.svg";
 
 //  Profile
