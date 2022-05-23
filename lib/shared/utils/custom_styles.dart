@@ -6,7 +6,7 @@ import 'colors.dart';
 class AppStyles {
   static var focusBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(8.r),
-    borderSide: BorderSide(color: AppColors.vhTextInputBorder, width: 1.w),
+    borderSide: BorderSide(color: AppColors.vhLightBlue, width: 1.w),
   );
   static var focusedBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(8.r),

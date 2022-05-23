@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vh_jobs/config/app_startup.dart';
 
-import '../../../../shared/navigation/navigation_service.dart';
 import '../../../../shared/style/border_style.dart';
 import '../../../../shared/style/font_style.dart';
 import '../../../../shared/utils/colors.dart';
 import '../../../../shared/widgets/appbars/vhjob_appbar.dart';
 import '../../../../shared/widgets/button.dart';
-import '../../route/routes.dart';
 
 class SelectCard extends StatefulWidget {
   const SelectCard({Key? key}) : super(key: key);
@@ -99,10 +96,7 @@ class _SelectCardState extends State<SelectCard> {
                 SizedBox(height: 20.h),
                 VhJobsButton(
                   text: "Top up",
-                  onPressed: () {
-                    serviceLocator<NavigationService>()
-                        .to(routeName: ProfileRoutes.transactionHistory);
-                  },
+                  onPressed: () {},
                 ),
                 SizedBox(
                   height: 30.h,

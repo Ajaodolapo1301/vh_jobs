@@ -7,6 +7,7 @@ import '../../modules/onboarding/widget/splash_screen.dart';
 import '../../modules/profie/route/routes.dart';
 import '../../modules/profie/widget/wallet/add_wallet.dart';
 import '../../modules/profie/widget/wallet/select_card.dart';
+import '../../modules/profie/widget/wallet/transaction_details.dart';
 import '../../modules/profie/widget/wallet/transaction_history.dart';
 import '../../modules/root/root.dart';
 import '../../modules/root/route/routes.dart';
@@ -43,9 +44,12 @@ var routes = (RouteSettings settings) {
       return SlideUpRoute(page: const AddWallet());
 
     case ProfileRoutes.selectCard:
-      return SlideUpRoute(page: const SelectCard());
+      return FadeRoute(page: const SelectCard());
 
     case ProfileRoutes.transactionHistory:
-      return SlideUpRoute(page: const TransactionHistory());
+      return FadeRoute(page: const TransactionHistory());
+
+    case ProfileRoutes.transactionDetails:
+      return FadeRoute(page: const TransactionDetails());
   }
 };

@@ -40,8 +40,13 @@ class AssetResources {
   static const doc = "assets/images/profile/fluent_document.svg";
   static const infoCircle = "assets/images/profile/info-circle-outlined.svg";
 
+  //wallet
   static const filter = "assets/images/profile/mi_filter.svg";
   static const inflow = "assets/images/profile/inflow.svg";
-
+  static const cardImage = "assets/images/profile/ovalBlue.png";
   static const calendar = "assets/images/profile/icons_calendar.svg";
+
+  static const closedEye = "assets/images/profile/closed_eye.svg";
+  static const openEye = "assets/images/profile/open_eye.svg";
+  static const secure = "assets/images/profile/portfolio_secure.png";
 }

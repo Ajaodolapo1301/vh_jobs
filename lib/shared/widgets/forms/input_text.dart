@@ -82,8 +82,8 @@ class _InputTextState extends State<InputText> {
                 text: TextSpan(
                     text: widget.headerText?.replaceAll("*", "") ?? "",
                     style: TextStyle(
-                      color: AppColors.goMechoBlue50,
-                      fontSize: 12.sp,
+                      color: AppColors.vhDarkBlue,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.w400,
                     ),
                     children: <TextSpan>[
@@ -93,7 +93,7 @@ class _InputTextState extends State<InputText> {
                                 ? '*'
                                 : ""
                             : "",
-                        style: TextStyle(color: Colors.red, fontSize: 12.sp),
+                        style: TextStyle(color: Colors.red, fontSize: 15.sp),
 
                         // navigate to desired screen
                       ),
