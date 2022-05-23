@@ -53,6 +53,7 @@ dependencies:
   cached_network_image: ^3.2.0
   flutter_screenutil: ^5.0.0+2
   palette_generator: ^0.3.3
+  responsive_grid_list: ^1.2.4
   timelines: ^0.1.0
   device_preview: ^1.0.0
   date_picker_timeline: ^1.2.3
@@ -90,7 +91,7 @@ flutter:
     - assets/
     - assets/images/onboarding/
     - assets/images/profile/
-    - assets/images/dashboard/
+    - assets/images/home/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
