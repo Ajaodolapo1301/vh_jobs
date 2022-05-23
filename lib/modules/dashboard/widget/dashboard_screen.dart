@@ -40,24 +40,44 @@ class _DashboardScreenState extends State<DashboardScreen> {
             SizedBox(
               height: 10.h,
             ),
-            ResponsiveGridList(
-              horizontalGridSpacing:
-                  15.w, // Horizontal space between grid items
-              horizontalGridMargin: 5.w, // Horizontal space around the grid
-              verticalGridMargin: 15.h, // Vertical space around the grid
-              minItemWidth:
-                  300, // The minimum item width (can be smaller, if the layout constraints are smaller)
-              minItemsPerRow:
-                  2, // The minimum items to show in a single row. Takes precedence over minItemWidth
-              maxItemsPerRow:
-                  5, // The maximum items to show in a single row. Can be useful on large screens
-              shrinkWrap: true, // shrinkWrap property of the ListView.builder()
-              children: List.generate(DashboardModel.list.length, (index) {
-                return DashboardWidget(
-                  dashboardModel: DashboardModel.list[index],
-                );
-              }), // The list of widgets in the list
-            ),
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Trending needs",
+                          style: kBold400.copyWith(fontSize: 25.sp),
+                        ),
+                        Text(
+                          "View All",
+                          style: kBold400.copyWith(
+                              fontSize: 15.sp, color: AppColors.vhBlue),
+                        )
+                      ]),
+                  ResponsiveGridList(
+                    horizontalGridSpacing: 15.w,
+                    horizontalGridMargin: 5.w,
+                    verticalGridMargin: 15.h,
+                    minItemWidth:
+                        300, // The minimum item width (can be smaller, if the layout constraints are smaller)
+                    minItemsPerRow:
+                        2, // The minimum items to show in a single row. Takes precedence over minItemWidth
+                    maxItemsPerRow:
+                        5, // The maximum items to show in a single row. Can be useful on large screens
+                    shrinkWrap:
+                        true, // shrinkWrap property of the ListView.builder()
+                    children:
+                        List.generate(DashboardModel.list.length, (index) {
+                      return DashboardWidget(
+                        dashboardModel: DashboardModel.list[index],
+                      );
+                    }), // The list of widgets in the list
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
