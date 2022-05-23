@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:vh_jobs/modules/auth/root.dart';
-import 'package:vh_jobs/modules/auth/route/routes.dart';
-import 'package:vh_jobs/modules/profie/route/routes.dart';
-import 'package:vh_jobs/modules/profie/widget/wallet/add_wallet.dart';
-import 'package:vh_jobs/modules/profie/widget/wallet/select_card.dart';
-import 'package:vh_jobs/modules/profie/widget/wallet/transaction_history.dart';
-import 'package:vh_jobs/modules/root/root.dart';
-import 'package:vh_jobs/modules/root/route/routes.dart';
-import 'package:vh_jobs/modules/root/widgets/bottom_nav.dart';
-import 'package:vh_jobs/shared/navigation/animations/slide_up.dart';
 
+import '../../modules/onboarding/root.dart';
 import '../../modules/onboarding/route/routes.dart';
 import '../../modules/onboarding/welcome_screen.dart';
 import '../../modules/onboarding/widget/splash_screen.dart';
-import '../../modules/orders/root.dart';
-import '../../modules/orders/root2.dart';
-import '../../modules/orders/route/routes.dart';
+import '../../modules/profie/route/routes.dart';
+import '../../modules/profie/widget/wallet/add_wallet.dart';
+import '../../modules/profie/widget/wallet/select_card.dart';
+import '../../modules/profie/widget/wallet/transaction_details.dart';
+import '../../modules/profie/widget/wallet/transaction_history.dart';
+import '../../modules/root/root.dart';
+import '../../modules/root/route/routes.dart';
+import '../../modules/root/widgets/bottom_nav.dart';
 import 'animations/fade_route.dart';
+import 'animations/slide_up.dart';
 
 // ignore: prefer_function_declarations_over_variables
 var routes = (RouteSettings settings) {
@@ -28,7 +25,7 @@ var routes = (RouteSettings settings) {
 
     case OnboardingRoutes.onboardingScreen:
       return FadeRoute(
-        page: const SplashScreen(),
+        page: const OnboardingScreen(),
       );
 
     case OnboardingRoutes.welcomePage:
@@ -64,16 +61,19 @@ var routes = (RouteSettings settings) {
       Tabs currentTab = Tabs.home;
       return SlideUpRoute(
           page: RootWidget(
-            currentTab: currentTab,
-          ));
+        currentTab: currentTab,
+      ));
 
     case ProfileRoutes.addWallet:
       return SlideUpRoute(page: const AddWallet());
 
     case ProfileRoutes.selectCard:
-      return SlideUpRoute(page: const SelectCard());
+      return FadeRoute(page: const SelectCard());
 
     case ProfileRoutes.transactionHistory:
-      return SlideUpRoute(page: const TransactionHistory());
+      return FadeRoute(page: const TransactionHistory());
+
+    case ProfileRoutes.transactionDetails:
+      return FadeRoute(page: const TransactionDetails());
   }
 };

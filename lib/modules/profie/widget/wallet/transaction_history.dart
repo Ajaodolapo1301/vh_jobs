@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:vh_jobs/modules/profie/widget/wallet/widget/history_cell.dart';
+import 'package:vh_jobs/modules/profie/widget/wallet/widget/wallet_balace_widget.dart';
 
 import '../../../../shared/style/font_style.dart';
 import '../../../../shared/utils/asset_images.dart';
@@ -46,6 +47,10 @@ class _TransactionHistoryState extends State<TransactionHistory> {
               )
             ]),
             SizedBox(height: 24.h),
+            WalletBalanceWidget(
+              color: AppColors.vhBlue,
+            ),
+            SizedBox(height: 24.h),
             Container(
               padding: EdgeInsets.all(10.w),
               decoration: BoxDecoration(
@@ -74,6 +79,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
                       child: InputText(
@@ -115,7 +121,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                   },
                   separatorBuilder: (context, index) {
                     return SizedBox(
-                      height: 4,
+                      height: 6,
                     );
                   },
                   itemCount: 2),
@@ -123,57 +129,6 @@ class _TransactionHistoryState extends State<TransactionHistory> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class HistoryCell extends StatelessWidget {
-  const HistoryCell({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10.w),
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Row(children: [
-          Container(
-            padding: EdgeInsets.all(10.h),
-            height: 48.h,
-            width: 48.w,
-            decoration:
-                BoxDecoration(shape: BoxShape.circle, color: AppColors.vhBrown),
-            child: SvgPicture.asset(
-              AssetResources.inflow,
-              fit: BoxFit.cover,
-            ),
-          ),
-          SizedBox(width: 14.w),
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(
-              "Visa *4520",
-              style: kBold900.copyWith(
-                  fontWeight: FontWeight.w700, fontSize: 15.h),
-            ),
-            Text(
-              "Top up",
-              style: kBold400.copyWith(
-                  fontWeight: FontWeight.w300, fontSize: 11.h),
-            )
-          ]),
-        ]),
-        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(
-            "N10,000",
-            style:
-                kBold900.copyWith(fontWeight: FontWeight.w700, fontSize: 15.h),
-          ),
-          Text(
-            "21 Mar 2021",
-            style:
-                kBold400.copyWith(fontWeight: FontWeight.w300, fontSize: 11.h),
-          )
-        ])
-      ]),
     );
   }
 }

@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vh_jobs/config/app_startup.dart';
-import 'package:vh_jobs/modules/profie/route/routes.dart';
 import 'package:vh_jobs/modules/profie/widget/setting_card.dart';
 
-import '../../../shared/navigation/navigation_service.dart';
 import '../../../shared/utils/asset_images.dart';
 import '../../../shared/utils/colors.dart';
+import '../../../shared/widgets/button.dart';
 import '../../../shared/widgets/cache_image.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -23,16 +21,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF8FDFF),
+      backgroundColor: const Color(0xffF8FDFF),
       body: SingleChildScrollView(
-        physics: ClampingScrollPhysics(),
+        physics: const ClampingScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             SizedBox(height: 23.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: ProfileCard(),
+              child: const ProfileCard(),
             ),
             SizedBox(height: 23.h),
             Container(
@@ -46,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       color: Colors.grey.withOpacity(0.3),
                       spreadRadius: 1,
                       blurRadius: 2,
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
@@ -70,7 +68,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       fontSize: 15.sp,
                                       fontWeight: FontWeight.w400),
                                 ),
-                                Text("N ****"),
+                                const Text("N ****"),
                                 InkWell(
                                   child: hideAmount
                                       ? Icon(
@@ -89,10 +87,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ),
                               ]),
                               InkWell(
-                                onTap: () {
-                                  serviceLocator<NavigationService>()
-                                      .to(routeName: ProfileRoutes.selectCard);
-                                },
+                                onTap: () {},
                                 child: Container(
                                   width: 58.w,
                                   height: 19.h,
@@ -128,7 +123,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   style:
                       TextStyle(fontWeight: FontWeight.w400, fontSize: 15.sp),
                 ),
-                Spacer(),
+                const Spacer(),
                 Transform.scale(
                   scale: 0.5,
                   child: CupertinoSwitch(
@@ -145,12 +140,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: SettingCard(),
+              child: const SettingCard(),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: SettingCard(),
+              child: const SettingCard2(),
             ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: const SettingCard3(),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: const SettingCard4(),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: const VhJobsButton(
+                type: ButtonType.outlined,
+                text: "Log out",
+              ),
+            )
           ],
         ),
       ),

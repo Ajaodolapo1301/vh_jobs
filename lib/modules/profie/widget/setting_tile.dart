@@ -70,7 +70,7 @@ class _SettingTileState extends State<SettingTile> {
                   ),
                   Icon(
                     Icons.arrow_forward_ios_sharp,
-                    size: 20,
+                    size: 15.sp,
                     color: AppColors.vhBlue,
                   )
                 ]),
