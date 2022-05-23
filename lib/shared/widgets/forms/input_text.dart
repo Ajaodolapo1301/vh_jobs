@@ -124,7 +124,7 @@ class _InputTextState extends State<InputText> {
               // filled: true,
               // fillColor: AppColors.textColorSecondaryLight,
               contentPadding: EdgeInsets.only(
-                  left: 20.w, right: 15.w, top: 10.h, bottom: 10.h),
+                  left: 20.w, right: 15.w, top: 15.h, bottom: 10.h),
               focusedBorder: AppStyles.focusedBorder,
               disabledBorder: AppStyles.focusBorder,
               enabledBorder: AppStyles.focusBorder,

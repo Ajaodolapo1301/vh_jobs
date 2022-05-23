@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:vh_jobs/modules/profie/widget/wallet/widget/history_cell.dart';
 import 'package:vh_jobs/modules/profie/widget/wallet/widget/wallet_balace_widget.dart';
 
@@ -97,16 +98,16 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                     SizedBox(
                       width: 10.w,
                     ),
-                    Center(
-                      child: Container(
-                        height: 40.h,
-                        width: 40.w,
-                        decoration: BoxDecoration(
-                            color: AppColors.vhBlue,
-                            borderRadius: BorderRadius.circular(5)),
-                        child: const VhCacheImage(
-                          imgUrl: AssetResources.filter,
-                        ),
+                    Container(
+                      height: 39.h,
+                      width: 40.w,
+                      margin: EdgeInsets.only(top: 6.h),
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                          color: AppColors.vhBlue,
+                          borderRadius: BorderRadius.circular(5)),
+                      child: SvgPicture.asset(
+                        AssetResources.filter,
                       ),
                     )
                   ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../shared/widgets/appbars/vhjob_appbar.dart';
+import '../orders/root.dart';
 import '../profie/root.dart';
 import 'widgets/bottom_nav.dart';
 
@@ -37,10 +38,10 @@ class _RootWidgetState extends State<RootWidget> {
           //   isCurrent: currentTab == Tabs.product,
           //   key: Key(Tabs.product.name),
           // ),
-          // StoreRootWidget(
-          //   isCurrent: currentTab == Tabs.store,
-          //   key: Key(Tabs.store.name),
-          // ),
+          OrderRootWidget(
+            isCurrent: currentTab == Tabs.order,
+            key: Key(Tabs.order.name),
+          ),
           ProfileRootWidget(
             isCurrent: currentTab == Tabs.profile,
             key: Key(Tabs.profile.name),

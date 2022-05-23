@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../modules/auth/root.dart';
+import '../../modules/auth/route/routes.dart';
 import '../../modules/onboarding/root.dart';
 import '../../modules/onboarding/route/routes.dart';
 import '../../modules/onboarding/welcome_screen.dart';
 import '../../modules/onboarding/widget/splash_screen.dart';
+import '../../modules/orders/empty.dart';
+import '../../modules/orders/root2.dart';
+import '../../modules/orders/route/routes.dart';
 import '../../modules/profie/route/routes.dart';
 import '../../modules/profie/widget/wallet/add_wallet.dart';
 import '../../modules/profie/widget/wallet/select_card.dart';
@@ -33,30 +38,23 @@ var routes = (RouteSettings settings) {
         page: const WelcomePage(),
       );
 
-
-
-
-  //    Order
+    //    Order
     case OrderRoutes.root:
       return FadeRoute(
         page: const Orders(),
       );
-
-
-
 
     case OrderRoutes.root2:
       return FadeRoute(
         page: const Orders2(),
       );
 
-
     case AuthRoutes.root2:
       return FadeRoute(
         page: const SignUpPage(),
       );
 
-  //  Root
+    //  Root
     case RootRoutes.home:
       Tabs currentTab = Tabs.home;
       return SlideUpRoute(

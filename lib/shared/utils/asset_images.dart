@@ -49,4 +49,5 @@ class AssetResources {
   static const closedEye = "assets/images/profile/closed_eye.svg";
   static const openEye = "assets/images/profile/open_eye.svg";
   static const secure = "assets/images/profile/portfolio_secure.png";
+  static const search = "assets/images/profile/search.svg";
 }

@@ -1,63 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vh_jobs/config/app_startup.dart';
-import 'package:vh_jobs/modules/orders/route/routes.dart';
-import 'package:vh_jobs/shared/navigation/navigation_service.dart';
+import 'package:vh_jobs/modules/orders/root2.dart';
 
-import '../../shared/widgets/button.dart';
+class OrderRootWidget extends StatefulWidget {
+  final bool isCurrent;
 
-class Orders extends StatefulWidget {
-  const Orders({Key? key}) : super(key: key);
-
-
+  const OrderRootWidget({Key? key, required this.isCurrent}) : super(key: key);
 
   @override
-  _OrdersState createState() => _OrdersState();
+  _OrderRootWidgetState createState() => _OrderRootWidgetState();
 }
 
-class _OrdersState extends State<Orders> {
+class _OrderRootWidgetState extends State<OrderRootWidget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-      appBar: AppBar(),
-      body: Container(padding: EdgeInsets.symmetric(horizontal: 20.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Image.asset('assets/svgs/onboarding/order1.png'),
-      Column(
-
-        children:  [
-          Text('Orders',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 15.sp
-            ),
-          ),
-          SizedBox(height: 20.h,),
-          Text('Subcribe for packages or hire professionals! Your orders will show up here',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontWeight: FontWeight.w300,
-                fontSize: 15.sp
-            ),
-          ),
-        ],
-      ),
-            VhJobsButton(
-              text: "Get Started",
-              onPressed: () {
-                  serviceLocator<NavigationService>().to(routeName: OrderRoutes.root2);
-                }
-            ),
-
-
-
-          ],
-        ),
-      ),
-    );
+    return Offstage(offstage: !widget.isCurrent, child: const Orders2());
   }
 }
