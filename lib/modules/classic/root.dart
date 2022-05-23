@@ -210,7 +210,7 @@ Widget build(BuildContext context) {
                         'Delivery information',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
-                          fontSize: 20.sp,
+                          fontSize: 17.sp,
                         ),
                       ),
                       const Divider(
@@ -220,7 +220,7 @@ Widget build(BuildContext context) {
                       Text(
                         'Enter your phone Number',
                         style: TextStyle(
-                            fontWeight: FontWeight.w400, fontSize: 15.sp),
+                            fontWeight: FontWeight.w400, fontSize: 14.sp),
                       ),
                       Container(
                         margin: EdgeInsets.all(5),
@@ -270,7 +270,7 @@ Widget build(BuildContext context) {
                       Text(
                         'Full name',
                         style: TextStyle(
-                            fontWeight: FontWeight.w400, fontSize: 15.sp),
+                            fontWeight: FontWeight.w400, fontSize: 14.sp),
                       ),
                       Row(
                         children: [
@@ -375,7 +375,7 @@ Widget build(BuildContext context) {
                                 color: Color(0xff061725),
                                 ),
                                 ),
-                                Icon(Icons.arrow_downward)
+                                Icon(Icons.keyboard_arrow_down),
                               ],
                             )
                         ],

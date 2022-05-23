@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:vh_jobs/modules/auth/root.dart';
 import 'package:vh_jobs/modules/auth/route/routes.dart';
+import 'package:vh_jobs/modules/profie/route/routes.dart';
+import 'package:vh_jobs/modules/profie/widget/wallet/add_wallet.dart';
+import 'package:vh_jobs/modules/profie/widget/wallet/select_card.dart';
+import 'package:vh_jobs/modules/profie/widget/wallet/transaction_history.dart';
+import 'package:vh_jobs/modules/root/root.dart';
+import 'package:vh_jobs/modules/root/route/routes.dart';
+import 'package:vh_jobs/modules/root/widgets/bottom_nav.dart';
+import 'package:vh_jobs/shared/navigation/animations/slide_up.dart';
 
 import '../../modules/onboarding/route/routes.dart';
 import '../../modules/onboarding/welcome_screen.dart';
@@ -51,5 +59,21 @@ var routes = (RouteSettings settings) {
         page: const SignUpPage(),
       );
 
+  //  Root
+    case RootRoutes.home:
+      Tabs currentTab = Tabs.home;
+      return SlideUpRoute(
+          page: RootWidget(
+            currentTab: currentTab,
+          ));
+
+    case ProfileRoutes.addWallet:
+      return SlideUpRoute(page: const AddWallet());
+
+    case ProfileRoutes.selectCard:
+      return SlideUpRoute(page: const SelectCard());
+
+    case ProfileRoutes.transactionHistory:
+      return SlideUpRoute(page: const TransactionHistory());
   }
 };
