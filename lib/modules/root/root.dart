@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../shared/widgets/appbars/vhjob_appbar.dart';
+import '../dashboard/root.dart';
 import '../orders/root.dart';
 import '../profie/root.dart';
 import 'widgets/bottom_nav.dart';
@@ -30,10 +31,10 @@ class _RootWidgetState extends State<RootWidget> {
       appBar: VhjobsAppBar(centerTitle: true),
       body: Stack(
         children: [
-          // HomeRootWidget(
-          //   isCurrent: currentTab == Tabs.home,
-          //   key: Key(Tabs.home.name),
-          // ),
+          DashboardRootWidget(
+            isCurrent: currentTab == Tabs.home,
+            key: Key(Tabs.home.name),
+          ),
           // ProductRootWidget(
           //   isCurrent: currentTab == Tabs.product,
           //   key: Key(Tabs.product.name),

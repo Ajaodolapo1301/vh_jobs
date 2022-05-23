@@ -23,7 +23,7 @@ class _Orders2State extends State<Orders2> {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 22.w),
+            padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 22.w),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
