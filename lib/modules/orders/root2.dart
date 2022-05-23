@@ -693,9 +693,16 @@ class _Orders2State extends State<Orders2> {
                   );
                 },
                 separatorBuilder: (context, index) {
-                  return const Divider(
-                    thickness: 1,
-                    color: Color(0xffBBC1C7),
+                  return Column(
+                    children: [
+                      Divider(
+                        thickness: 1,
+                        color: Color(0xffBBC1C7),
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      )
+                    ],
                   );
                 },
                 itemCount: OrderModel.listOrder(context).length),
