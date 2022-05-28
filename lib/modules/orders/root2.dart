@@ -21,49 +21,57 @@ class _Orders2State extends State<Orders2> {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 22.w),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(
-                'Vhjobs Classic Orders',
-                style: TextStyle(
-                  fontSize: 25.sp,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: InputText(
-                      labelText: 'Search all orders',
-                      prefixIcon: InkWell(
-                        onTap: () {},
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20.w),
-                          child: SvgPicture.asset(AssetResources.search),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.w),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Vhjobs Classic Orders',
+                        style: TextStyle(
+                          fontSize: 25.sp,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 15.w,
-                  ),
-                  Container(
-                    height: 39.h,
-                    width: 40.w,
-                    margin: EdgeInsets.only(top: 6.h),
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        color: AppColors.vhBlue,
-                        borderRadius: BorderRadius.circular(5)),
-                    child: SvgPicture.asset(
-                      AssetResources.filter,
-                    ),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 10.h,
+                      Row(
+                        children: [
+                          Expanded(
+                            child: InputText(
+                              labelText: 'Search all orders',
+                              prefixIcon: InkWell(
+                                onTap: () {},
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 20.w),
+                                  child:
+                                      SvgPicture.asset(AssetResources.search),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 15.w,
+                          ),
+                          Container(
+                            height: 39.h,
+                            width: 40.w,
+                            margin: EdgeInsets.only(top: 6.h),
+                            padding: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                                color: AppColors.vhBlue,
+                                borderRadius: BorderRadius.circular(5)),
+                            child: SvgPicture.asset(
+                              AssetResources.filter,
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                    ]),
               ),
               const Divider(
                 thickness: 1,
