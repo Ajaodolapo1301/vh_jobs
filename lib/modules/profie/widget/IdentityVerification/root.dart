@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
+import '../../../../config/app_startup.dart';
+import '../../../../shared/navigation/navigation_service.dart';
 import '../../../../shared/style/font_style.dart';
 import '../../../../shared/utils/asset_images.dart';
 import '../../../../shared/utils/colors.dart';
 import '../../../../shared/widgets/appbars/vhjob_appbar.dart';
-import '../security/root.dart';
+import '../../route/routes.dart';
 
 class IdentityVerification extends StatefulWidget {
   const IdentityVerification({Key? key}) : super(key: key);
@@ -78,24 +81,28 @@ class _IdentityVerificationState extends State<IdentityVerification> {
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Column(
                   children: [
-                    SecurityWidget(
-                      isOn: pinCode,
-                      isSwitch: false,
+                    IdentityWidget(
+                      onTap: () {
+                        serviceLocator<NavigationService>()
+                            .to(routeName: ProfileRoutes.govtIssueId);
+                      },
                       image: AssetResources.idCard,
                       text: "Goverment-issued ID",
                     ),
-                    SecurityWidget(
-                      isOn: pinCode,
-                      isSwitch: false,
-                      image: AssetResources.document,
-                      text: "Utility bill",
-                    ),
-                    SecurityWidget(
-                      isOn: pinCode,
-                      isSwitch: false,
-                      image: AssetResources.user,
-                      text: "Facial verification",
-                    ),
+                    IdentityWidget(
+                        image: AssetResources.document,
+                        text: "Utility bill",
+                        onTap: () {
+                          serviceLocator<NavigationService>()
+                              .to(routeName: ProfileRoutes.utilityBill);
+                        }),
+                    IdentityWidget(
+                        image: AssetResources.user,
+                        text: "Facial verification",
+                        onTap: () {
+                          serviceLocator<NavigationService>()
+                              .to(routeName: ProfileRoutes.facial);
+                        }),
                   ],
                 ),
               ),
@@ -105,6 +112,58 @@ class _IdentityVerificationState extends State<IdentityVerification> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class IdentityWidget extends StatefulWidget {
+  final String? image;
+  final String? text;
+  final VoidCallback? onTap;
+
+  IdentityWidget({
+    Key? key,
+    this.image,
+    this.text,
+    this.onTap,
+  }) : super(key: key);
+
+  @override
+  State<IdentityWidget> createState() => _IdentityWidgetState();
+}
+
+class _IdentityWidgetState extends State<IdentityWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: widget.onTap,
+      child: Column(
+        children: [
+          Row(children: [
+            Row(children: [
+              SvgPicture.asset(widget.image!),
+              SizedBox(
+                width: 15.w,
+              ),
+              Text(
+                widget.text!,
+                style: kBold300.copyWith(fontSize: 15.sp),
+              )
+            ]),
+            const Spacer(),
+            IconButton(
+                color: AppColors.vhBlue,
+                icon: Icon(
+                  Icons.arrow_forward_ios_sharp,
+                  size: 15.sp,
+                ),
+                onPressed: widget.onTap)
+          ]),
+          Divider(
+            color: AppColors.vhBlue,
+          )
+        ],
       ),
     );
   }

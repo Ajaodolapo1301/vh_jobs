@@ -9,4 +9,8 @@ class ProfileRoutes {
   static const addAddress = "/add-address";
   static const security = "/security";
   static const identityVerification = "/identityVerification";
+  static const govtIssueId = "/govtIssueId";
+  static const utilityBill = "/utilityBill";
+  static const facial = "/facial";
+  static const successPage = "/successPage";
 }

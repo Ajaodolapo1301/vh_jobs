@@ -101,12 +101,14 @@ class SecurityWidget extends StatefulWidget {
   bool isOn;
   final String? image;
   final String? text;
+  final VoidCallback? onTap;
   bool isSwitch;
   SecurityWidget(
       {Key? key,
       this.isOn = false,
       this.image,
       this.text,
+      this.onTap,
       this.isSwitch = true})
       : super(key: key);
 
@@ -150,8 +152,7 @@ class _SecurityWidgetState extends State<SecurityWidget> {
                     Icons.arrow_forward_ios_sharp,
                     size: 15.sp,
                   ),
-                  onPressed: () {},
-                )
+                  onPressed: widget.onTap)
         ]),
         Divider(
           color: AppColors.vhBlue,

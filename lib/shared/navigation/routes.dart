@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vh_jobs/modules/profie/widget/IdentityVerification/utility_issue_id.dart';
 
 import '../../modules/auth/root.dart';
 import '../../modules/auth/route/routes.dart';
@@ -10,7 +11,10 @@ import '../../modules/orders/empty.dart';
 import '../../modules/orders/root2.dart';
 import '../../modules/orders/route/routes.dart';
 import '../../modules/profie/route/routes.dart';
+import '../../modules/profie/widget/IdentityVerification/facial.dart';
+import '../../modules/profie/widget/IdentityVerification/govt_issue_id.dart';
 import '../../modules/profie/widget/IdentityVerification/root.dart';
+import '../../modules/profie/widget/IdentityVerification/success_page.dart';
 import '../../modules/profie/widget/manageAddress/add_address.dart';
 import '../../modules/profie/widget/manageAddress/address_list.dart';
 import '../../modules/profie/widget/manageAddress/root.dart';
@@ -97,5 +101,17 @@ var routes = (RouteSettings settings) {
 
     case ProfileRoutes.identityVerification:
       return FadeRoute(page: const IdentityVerification());
+
+    case ProfileRoutes.govtIssueId:
+      return FadeRoute(page: const GovtIssueId());
+
+    case ProfileRoutes.utilityBill:
+      return FadeRoute(page: const UtilityBill());
+
+    case ProfileRoutes.facial:
+      return FadeRoute(page: const Facial());
+
+    case ProfileRoutes.successPage:
+      return FadeRoute(page: const SuccessPage());
   }
 };

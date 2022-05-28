@@ -62,6 +62,8 @@ class AssetResources {
   static const idCard = "assets/images/profile/id-card.svg";
   static const user = "assets/images/profile/user.svg";
 
+  static const check = "assets/images/profile/check.png";
+
   //wallet
   static const filter = "assets/images/profile/mi_filter.svg";
   static const inflow = "assets/images/profile/inflow.svg";
