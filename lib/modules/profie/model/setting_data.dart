@@ -27,19 +27,10 @@ class SettingItems {
       SettingItem(
           title: "Payment Method",
           image: AssetResources.creditCard,
-          onTap: () {}),
-      // SettingItem(
-      //     title: "Security",
-      //     image: AssetResources.LOCK_ICON,
-      //     onTap: () => GetIt.I
-      //         .get<NavigationService>()
-      //         .to(routeName: ChangePasswordRoute.changePassword)),
-      // SettingItem(
-      //     title: "Identity Verification",
-      //     image: AssetResources.LOGOUT_ICON,
-      //     onTap: () {
-      //       showLogoutModal(context);
-      //     })
+          onTap: () {
+            serviceLocator<NavigationService>()
+                .to(routeName: ProfileRoutes.paymentMethod);
+          }),
     ];
   }
 

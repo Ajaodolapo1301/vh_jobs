@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../config/app_startup.dart';
+import '../../../../shared/navigation/navigation_service.dart';
 import '../../../../shared/style/border_style.dart';
 import '../../../../shared/style/font_style.dart';
 import '../../../../shared/utils/asset_images.dart';
 import '../../../../shared/utils/colors.dart';
 import '../../../../shared/widgets/appbars/vhjob_appbar.dart';
 import '../../../../shared/widgets/button.dart';
+import '../../route/routes.dart';
 
 class Referral extends StatefulWidget {
   const Referral({Key? key}) : super(key: key);
@@ -145,6 +148,9 @@ class _ReferralState extends State<Referral> {
                       style: kBold700.copyWith(fontSize: 15.sp),
                     ),
                   ),
+                  SizedBox(
+                    height: 14.h,
+                  ),
                   VhJobsButton(
                       text: "Http://vhjobs.com.link/RTfgh",
                       onPressed: () {
@@ -158,7 +164,8 @@ class _ReferralState extends State<Referral> {
                       text: "View history",
                       textColor: Colors.black.withOpacity(0.5),
                       onPressed: () {
-                        //  serviceLocator<NavigationService>().to(routeName: AuthRoutes.root2);
+                        serviceLocator<NavigationService>()
+                            .to(routeName: ProfileRoutes.referralHistory);
                       }),
                 ],
               )

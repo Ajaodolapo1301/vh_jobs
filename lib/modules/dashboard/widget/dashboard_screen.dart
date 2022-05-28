@@ -16,92 +16,128 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  OverlayEntry? predictionOverlay;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-                child: InputText(
-                  labelText: 'What do you need to get done?',
-                  prefixIcon: InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.w),
-                      child: SvgPicture.asset(AssetResources.search),
+      body: InkWell(
+        onTap: () {
+          closePredictionOverlay();
+        },
+        child: Container(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+                  child: InputText(
+                    labelText: 'What do you need to get done?',
+                    prefixIcon: InkWell(
+                      onTap: () {},
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: SvgPicture.asset(AssetResources.search),
+                      ),
                     ),
+                    onTap: () {
+                      print("ddd");
+                      showPredictions();
+                    },
+                    keyboardType: TextInputType.visiblePassword,
+                    onSaved: (val) {},
                   ),
-                  onTap: () {},
-                  keyboardType: TextInputType.visiblePassword,
-                  onSaved: (val) {},
                 ),
-              ),
-              // SizedBox(
-              //   height: 10.h,
-              // ),
-              Column(
-                children: [
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Trending needs",
-                            style: kBold400.copyWith(fontSize: 25.sp),
-                          ),
-                          Text(
-                            "View All",
-                            style: kBold400.copyWith(
-                                fontSize: 15.sp, color: AppColors.vhBlue),
-                          )
-                        ]),
-                  ),
-
-                  Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
-                    child: Wrap(
-                      direction: Axis.horizontal,
-                      spacing: 15.w,
-                      runSpacing: 20.h,
-                      children: DashboardModel.list.map((e) {
-                        return DashboardWidget(
-                          dashboardModel: e,
-                        );
-                      }).toList(),
+                // SizedBox(
+                //   height: 10.h,
+                // ),
+                Column(
+                  children: [
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Trending needs",
+                              style: kBold400.copyWith(fontSize: 25.sp),
+                            ),
+                            Text(
+                              "View All",
+                              style: kBold400.copyWith(
+                                  fontSize: 15.sp, color: AppColors.vhBlue),
+                            )
+                          ]),
                     ),
-                  ),
-                  // ResponsiveGridList(
-                  //   horizontalGridSpacing: 15.w,
-                  //   horizontalGridMargin: 5.w,
-                  //   verticalGridMargin: 15.h,
-                  //   minItemWidth:
-                  //       300, // The minimum item width (can be smaller, if the layout constraints are smaller)
-                  //   minItemsPerRow:
-                  //       2, // The minimum items to show in a single row. Takes precedence over minItemWidth
-                  //   maxItemsPerRow:
-                  //       5, // The maximum items to show in a single row. Can be useful on large screens
-                  //   shrinkWrap:
-                  //       true, // shrinkWrap property of the ListView.builder()
-                  //   children:
-                  //       List.generate(DashboardModel.list.length, (index) {
-                  //     return DashboardWidget(
-                  //       dashboardModel: DashboardModel.list[index],
-                  //     );
-                  //   }), // The list of widgets in the list
-                  // ),
-                ],
-              )
-            ],
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
+                      child: Wrap(
+                        direction: Axis.horizontal,
+                        spacing: 15.w,
+                        runSpacing: 20.h,
+                        children: DashboardModel.list.map((e) {
+                          return DashboardWidget(
+                            dashboardModel: e,
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
     );
+  }
+
+  void closePredictionOverlay() {
+    predictionOverlay?.remove();
+    predictionOverlay = null;
+  }
+
+  void showPredictions() {
+    print("eeeee");
+    final RenderBox? textFieldRenderBox =
+        context.findRenderObject() as RenderBox?;
+    final RenderBox? overlay =
+        Overlay.of(context)!.context.findRenderObject() as RenderBox?;
+    final width = textFieldRenderBox!.size.width;
+    final RelativeRect position = RelativeRect.fromRect(
+      Rect.fromPoints(
+        textFieldRenderBox.localToGlobal(
+            textFieldRenderBox.size.bottomLeft(Offset.zero),
+            ancestor: overlay),
+        textFieldRenderBox.localToGlobal(
+            textFieldRenderBox.size.bottomRight(Offset.zero),
+            ancestor: overlay),
+      ),
+      Offset.zero & overlay!.size,
+    );
+
+    predictionOverlay = OverlayEntry(builder: (context) {
+      return Positioned(
+          top: position.top,
+          left: position.left,
+          child: Container(
+              width: width,
+              child: Card(
+                  elevation: 3.0,
+                  clipBehavior: Clip.antiAlias,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.vertical(bottom: Radius.circular(0.0))),
+                  child: Container(
+                    height: 448.h,
+                    child: Text("sss"),
+                  ))));
+    });
+    Overlay.of(context)!.insert(predictionOverlay!);
+
+    predictionOverlay!.markNeedsBuild();
   }
 }
 

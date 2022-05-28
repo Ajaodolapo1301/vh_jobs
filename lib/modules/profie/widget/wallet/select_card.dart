@@ -116,7 +116,7 @@ class CardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
       decoration: kDecoration.copyWith(color: Colors.white),
       child: Row(
         children: [
@@ -128,7 +128,7 @@ class CardView extends StatelessWidget {
                 height: 42,
                 decoration: BoxDecoration(
                     border: Border.all(color: AppColors.vhDarkBlue),
-                    borderRadius: BorderRadius.circular(5)),
+                    borderRadius: BorderRadius.circular(5.r)),
               ),
               Positioned(
                 right: 0.0,
@@ -150,7 +150,7 @@ class CardView extends StatelessWidget {
             ],
           ),
           SizedBox(
-            width: 10.w,
+            width: 16.w,
           ),
           Column(
             children: [
@@ -161,7 +161,7 @@ class CardView extends StatelessWidget {
               Text(
                 "VISA Electron",
                 style: kBold400.copyWith(
-                    fontWeight: FontWeight.w300, fontSize: 11.sp),
+                    fontWeight: FontWeight.w300, fontSize: 13.sp),
               )
             ],
           )

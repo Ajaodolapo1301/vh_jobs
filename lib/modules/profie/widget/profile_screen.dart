@@ -22,6 +22,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   bool isPrepaid = false;
   bool hideAmount = false;
+  bool usd = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +84,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     SizedBox(
                                       width: 15.w,
                                     ),
-                                    const Text("N ****"),
+                                    hideAmount
+                                        ? const Text("N ****.**")
+                                        : const Text("N 1232.00"),
                                     InkWell(
                                       onTap: () {
                                         setState(() {
@@ -250,7 +253,7 @@ class CurvedBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         width: 58.w,
         height: 19.h,

@@ -107,6 +107,7 @@ class _InputTextState extends State<InputText> {
           maxLines: widget.height,
           // key: Key(DateTime.now().toString()),
           style: textFieldTextStyle(context),
+
           initialValue: widget.initialValue,
           controller: widget.controller,
           enabled: widget.enabled,

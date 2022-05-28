@@ -16,4 +16,6 @@ class ProfileRoutes {
   static const uploadNationalId = "/uploadNationalId";
   static const notificationScreen = "/notificationScreen";
   static const referral = "/referral";
+  static const referralHistory = "/referral-history";
+  static const paymentMethod = "/payment-method";
 }
