@@ -61,7 +61,12 @@ class SettingItems {
           }),
 
       SettingItem(
-          title: "Security", image: AssetResources.padlock, onTap: () {}),
+          title: "Security",
+          image: AssetResources.padlock,
+          onTap: () {
+            serviceLocator<NavigationService>()
+                .to(routeName: ProfileRoutes.security);
+          }),
       SettingItem(
           title: "Identity Verification",
           image: AssetResources.security,

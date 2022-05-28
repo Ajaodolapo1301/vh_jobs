@@ -53,6 +53,11 @@ class AssetResources {
   static const phone = "assets/images/profile/phone.svg";
   static const emptyAddress = "assets/images/profile/empty_address.svg";
 
+  static const padlockOutline = "assets/images/profile/padlock_outline.svg";
+  static const fingerprint = "assets/images/profile/fingerprint.svg";
+  static const sms = "assets/images/profile/sms.svg";
+  static const google = "assets/images/profile/google.svg";
+
   //wallet
   static const filter = "assets/images/profile/mi_filter.svg";
   static const inflow = "assets/images/profile/inflow.svg";

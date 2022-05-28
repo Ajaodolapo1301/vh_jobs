@@ -7,4 +7,5 @@ class ProfileRoutes {
   static const address = "/address";
   static const addresslist = "/address-list";
   static const addAddress = "/add-address";
+  static const security = "/security";
 }

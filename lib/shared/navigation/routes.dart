@@ -14,6 +14,7 @@ import '../../modules/profie/widget/manageAddress/add_address.dart';
 import '../../modules/profie/widget/manageAddress/address_list.dart';
 import '../../modules/profie/widget/manageAddress/root.dart';
 import '../../modules/profie/widget/profile_info.dart';
+import '../../modules/profie/widget/security/root.dart';
 import '../../modules/profie/widget/wallet/add_wallet.dart';
 import '../../modules/profie/widget/wallet/select_card.dart';
 import '../../modules/profie/widget/wallet/transaction_details.dart';
@@ -89,5 +90,8 @@ var routes = (RouteSettings settings) {
 
     case ProfileRoutes.addAddress:
       return FadeRoute(page: const AddAddress());
+
+    case ProfileRoutes.security:
+      return FadeRoute(page: const Security());
   }
 };
