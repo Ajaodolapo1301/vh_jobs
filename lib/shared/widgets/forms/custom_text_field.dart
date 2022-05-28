@@ -120,9 +120,11 @@ class CustomTextField extends FormField<String> {
                       Container(
                         child: Row(
                           children: [
-                            Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: SvgPicture.asset(prefix!)),
+                            prefix != null
+                                ? Padding(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: SvgPicture.asset(prefix))
+                                : SizedBox(),
                             SizedBox(
                               width: 10.w,
                             ),
@@ -149,13 +151,19 @@ class CustomTextField extends FormField<String> {
                                 ),
                                 decoration: InputDecoration(
                                     // labelText: header,
-                                    // alignLabelWithHint: alignLabelWithHint,
-                                    // labelStyle: TextStyle(
-                                    //   color: const Color(0xffC4BBBB),
-                                    //   fontWeight: FontWeight.w500,
-                                    //   fontSize: 14.sp,
-                                    // ),
-                                    // contentPadding: EdgeInsets.only(),
+                                    hintText: hint,
+                                    hintStyle: TextStyle(
+                                      color: const Color(0xff061725),
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14.sp,
+                                    ),
+                                    alignLabelWithHint: alignLabelWithHint,
+                                    labelStyle: TextStyle(
+                                      color: const Color(0xffC4BBBB),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14.sp,
+                                    ),
+                                    contentPadding: EdgeInsets.only(),
                                     border: const NothingInputBorder()),
                               ),
                             ),

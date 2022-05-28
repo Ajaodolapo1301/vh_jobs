@@ -17,6 +17,7 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double? appHeight;
   final double? leadingWidth;
   final bool gradientAppBar;
+  final TextStyle? titleTextStyle;
   const VhjobsAppBar(
       {Key? key,
       this.leadingIcon,
@@ -28,6 +29,7 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.gradientAppBar = false,
       this.shadowColor = Colors.white,
       this.backgroundColor = Colors.white,
+      this.titleTextStyle,
       this.leadingWidth = 56.0,
       this.appHeight = 60})
       : super(key: key);
@@ -108,20 +110,13 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
                         width: 25.w,
                         height: 20.h,
                       )
-                    : Text(
-                        titleText!,
-                        style: backgroundColor == Colors.white
-                            ? TextStyle(
+                    : Text(titleText!,
+                        style: titleTextStyle ??
+                            TextStyle(
                                 fontSize: 18.sp,
                                 color: AppColors.vhBlue,
                                 fontWeight: FontWeight.w700,
-                                height: 1.4)
-                            : TextStyle(
-                                fontSize: 18.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700,
-                                height: 1.4),
-                      ),
+                                height: 1.4)),
             // centerTitle: centerTitle,
             leading: leadingIcon ??
                 IconButton(

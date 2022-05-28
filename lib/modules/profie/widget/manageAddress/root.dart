@@ -4,8 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../config/app_startup.dart';
 import '../../../../shared/navigation/navigation_service.dart';
 import '../../../../shared/style/font_style.dart';
+import '../../../../shared/utils/asset_images.dart';
 import '../../../../shared/widgets/appbars/vhjob_appbar.dart';
 import '../../../../shared/widgets/button.dart';
+import '../../../../shared/widgets/cache_image.dart';
 import '../../route/routes.dart';
 
 class Address extends StatefulWidget {
@@ -37,7 +39,11 @@ class _AddressState extends State<Address> {
             SizedBox(
               height: 24.h,
             ),
-            const Spacer(),
+            const VhCacheImage(
+              imgUrl: AssetResources.emptyAddress,
+              height: 230,
+              width: 30,
+            ),
             VhJobsButton(
                 text: "Enter your address",
                 onPressed: () {

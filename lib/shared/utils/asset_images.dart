@@ -51,6 +51,7 @@ class AssetResources {
   static const emailOutline = "assets/images/profile/email-outline.svg";
   static const calendarDate = "assets/images/profile/calendar-date.svg";
   static const phone = "assets/images/profile/phone.svg";
+  static const emptyAddress = "assets/images/profile/empty_address.svg";
 
   //wallet
   static const filter = "assets/images/profile/mi_filter.svg";

@@ -27,78 +27,88 @@ class _AddressListState extends State<AddressList> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 20.h,
-            ),
-            Text(
-              "Manage address",
-              style: kBold900,
-            ),
-            SizedBox(
-              height: 24.h,
-            ),
-            Expanded(
-              child: ListView.separated(
-                  itemBuilder: (context, index) {
-                    return AddressListWidget(
-                      text: "Home",
-                    );
-                  },
-                  separatorBuilder: (context, index) {
-                    return SizedBox(
-                      height: 10.h,
-                    );
-                  },
-                  itemCount: 3),
-            ),
-            SizedBox(
-              height: 10.h,
-            ),
-            Container(
-              padding: EdgeInsets.all(10.w),
-              decoration: BoxDecoration(
-                  color: AppColors.vhBlue.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(5.r)),
-              child: Column(
-                children: [
-                  Text("Your Address",
-                      style: kBold700.copyWith(
-                        color: AppColors.vhBlue,
-                        fontSize: 17.sp,
-                      )),
-                  SizedBox(
-                    height: 8.h,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w),
-                    child: Text(
-                      "We supply your address to only service provider that travel to you. It is never made public",
-                      textAlign: TextAlign.center,
-                      style: kBold400.copyWith(
-                          color: AppColors.vhBlue,
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w300),
-                    ),
-                  ),
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 20.h,
               ),
-            ),
-            SizedBox(
-              height: 24.h,
-            ),
-            VhJobsButton(
-                text: "Enter your address",
-                onPressed: () {
-                  serviceLocator<NavigationService>()
-                      .to(routeName: ProfileRoutes.addAddress);
-                }),
-            SizedBox(
-              height: 14.h,
-            ),
-          ],
+              Text(
+                "Manage address",
+                style: kBold900,
+              ),
+              SizedBox(
+                height: 24.h,
+              ),
+
+              Column(
+                  children: ["1", "2", "3"].map((e) {
+                return AddressListWidget(
+                  text: "Home",
+                );
+              }).toList()),
+
+              // Expanded(
+              //   child: ListView.separated(
+              //       itemBuilder: (context, index) {
+              //         return AddressListWidget(
+              //           text: "Home",
+              //         );
+              //       },
+              //       separatorBuilder: (context, index) {
+              //         return SizedBox(
+              //           height: 10.h,
+              //         );
+              //       },
+              //       itemCount: 3),
+              // ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Container(
+                padding: EdgeInsets.all(10.w),
+                decoration: BoxDecoration(
+                    color: AppColors.vhBlue.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(5.r)),
+                child: Column(
+                  children: [
+                    Text("Your Address",
+                        style: kBold700.copyWith(
+                          color: AppColors.vhBlue,
+                          fontSize: 17.sp,
+                        )),
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: Text(
+                        "We supply your address to only service provider that travel to you. It is never made public",
+                        textAlign: TextAlign.center,
+                        style: kBold400.copyWith(
+                            color: AppColors.vhBlue,
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w300),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 24.h,
+              ),
+              VhJobsButton(
+                  text: "Enter your address",
+                  onPressed: () {
+                    serviceLocator<NavigationService>()
+                        .to(routeName: ProfileRoutes.addAddress);
+                  }),
+              SizedBox(
+                height: 14.h,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -112,6 +122,9 @@ class AddressListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(
+        vertical: 10.h,
+      ),
       // height: 128.h,
       padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 20.w),
       decoration: kDecoration,
