@@ -84,7 +84,10 @@ class SettingItems {
       SettingItem(
           title: "Notification",
           image: AssetResources.notification,
-          onTap: () {}),
+          onTap: () {
+            serviceLocator<NavigationService>()
+                .to(routeName: ProfileRoutes.notificationScreen);
+          }),
 
       // SettingItem(
       //     title: "Security",

@@ -14,4 +14,5 @@ class ProfileRoutes {
   static const facial = "/facial";
   static const successPage = "/successPage";
   static const uploadNationalId = "/uploadNationalId";
+  static const notificationScreen = "/notificationScreen";
 }

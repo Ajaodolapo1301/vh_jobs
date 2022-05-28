@@ -19,6 +19,7 @@ import '../../modules/profie/widget/IdentityVerification/upload_page.dart';
 import '../../modules/profie/widget/manageAddress/add_address.dart';
 import '../../modules/profie/widget/manageAddress/address_list.dart';
 import '../../modules/profie/widget/manageAddress/root.dart';
+import '../../modules/profie/widget/notification/root.dart';
 import '../../modules/profie/widget/profile_info.dart';
 import '../../modules/profie/widget/security/root.dart';
 import '../../modules/profie/widget/wallet/add_wallet.dart';
@@ -117,5 +118,8 @@ var routes = (RouteSettings settings) {
 
     case ProfileRoutes.uploadNationalId:
       return FadeRoute(page: const UploadNationalId());
+
+    case ProfileRoutes.notificationScreen:
+      return FadeRoute(page: const NotificationScreen());
   }
 };

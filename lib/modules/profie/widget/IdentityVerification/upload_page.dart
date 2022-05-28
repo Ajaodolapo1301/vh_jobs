@@ -63,6 +63,7 @@ class _UploadNationalIdState extends State<UploadNationalId> {
                             height: 180.h,
                             child: idFile == null
                                 ? Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
                                         "Tap to add images to upload",
