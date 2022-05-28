@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:vh_jobs/modules/profie/route/routes.dart';
 import 'package:vh_jobs/modules/profie/widget/setting_card.dart';
 
+import '../../../config/app_startup.dart';
+import '../../../shared/navigation/navigation_service.dart';
 import '../../../shared/utils/asset_images.dart';
 import '../../../shared/utils/colors.dart';
 import '../../../shared/widgets/button.dart';
@@ -29,12 +33,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
           children: [
             SizedBox(height: 23.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
               child: const ProfileCard(),
             ),
-            SizedBox(height: 23.h),
+            SizedBox(height: 13.h),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+              margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 0.h),
               child: Container(
                 // height: 295.h,
                 // width: 161.w,
@@ -61,50 +65,69 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Row(children: [
-                                Text(
-                                  "Balance",
-                                  style: TextStyle(
-                                      fontSize: 15.sp,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                                const Text("N ****"),
-                                InkWell(
-                                  child: hideAmount
-                                      ? Icon(
-                                          Icons.remove_red_eye_sharp,
-                                          size: 14.sp,
-                                        )
-                                      : Icon(
-                                          Icons.remove_red_eye_sharp,
-                                          size: 14.sp,
-                                        ),
-                                  onTap: () {
-                                    setState(() {
-                                      hideAmount = !hideAmount;
-                                    });
-                                  },
-                                ),
-                              ]),
-                              InkWell(
-                                onTap: () {},
-                                child: Container(
-                                  width: 58.w,
-                                  height: 19.h,
-                                  decoration: BoxDecoration(
-                                    color: AppColors.vhBlue,
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  child: Center(
-                                      child: Text(
-                                    "Top up",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 9.sp,
-                                        fontWeight: FontWeight.w500),
-                                  )),
-                                ),
+                              Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    SvgPicture.asset(
+                                        AssetResources.rotateRight),
+                                    SizedBox(
+                                      width: 15.w,
+                                    ),
+                                    Text(
+                                      "Balance",
+                                      style: TextStyle(
+                                          fontSize: 15.sp,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    SizedBox(
+                                      width: 15.w,
+                                    ),
+                                    const Text("N ****"),
+                                    InkWell(
+                                      onTap: () {
+                                        setState(() {
+                                          hideAmount = !hideAmount;
+                                        });
+                                      },
+                                      child: SvgPicture.asset(
+                                        hideAmount
+                                            ? AssetResources.openEye
+                                            : AssetResources.closedEye,
+                                        color: Colors.black,
+                                        width: 20.w,
+                                      ),
+                                    ),
+                                  ]),
+                              CurvedBadge(
+                                text: "Top up",
+                                onTap: () {
+                                  serviceLocator<NavigationService>()
+                                      .to(routeName: ProfileRoutes.addWallet);
+                                },
                               )
+                              // InkWell(
+                              //   onTap: () {
+                              //     serviceLocator<NavigationService>()
+                              //         .to(routeName: ProfileRoutes.addWallet);
+                              //   },
+                              //   child: Container(
+                              //     width: 58.w,
+                              //     height: 19.h,
+                              //     decoration: BoxDecoration(
+                              //       color: AppColors.vhBlue,
+                              //       borderRadius: BorderRadius.circular(30),
+                              //     ),
+                              //     child: Center(
+                              //         child: Text(
+                              //       "Top up",
+                              //       style: TextStyle(
+                              //           color: Colors.white,
+                              //           fontSize: 9.sp,
+                              //           fontWeight: FontWeight.w500),
+                              //     )),
+                              //   ),
+                              // )
                             ]),
                       ],
                     ),
@@ -215,6 +238,33 @@ class _ProfileCardState extends State<ProfileCard> {
           ],
         )
       ],
+    );
+  }
+}
+
+class CurvedBadge extends StatelessWidget {
+  final VoidCallback? onTap;
+  final String? text;
+  const CurvedBadge({Key? key, this.onTap, this.text}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        width: 58.w,
+        height: 19.h,
+        decoration: BoxDecoration(
+          color: AppColors.vhBlue,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Center(
+            child: Text(
+          text!,
+          style: TextStyle(
+              color: Colors.white, fontSize: 9.sp, fontWeight: FontWeight.w500),
+        )),
+      ),
     );
   }
 }

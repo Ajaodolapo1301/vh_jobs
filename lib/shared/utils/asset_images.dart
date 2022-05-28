@@ -45,6 +45,12 @@ class AssetResources {
   static const padlock = "assets/images/profile/padlock.svg";
   static const doc = "assets/images/profile/fluent_document.svg";
   static const infoCircle = "assets/images/profile/info-circle-outlined.svg";
+  static const rotateRight = "assets/images/profile/rotate-right.svg";
+
+  static const person = "assets/images/profile/person.svg";
+  static const emailOutline = "assets/images/profile/email-outline.svg";
+  static const calendarDate = "assets/images/profile/calendar-date.svg";
+  static const phone = "assets/images/profile/phone.svg";
 
   //wallet
   static const filter = "assets/images/profile/mi_filter.svg";

@@ -113,8 +113,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                       //     )),
                       Positioned(
                         left: 10.w,
-                        right: 50.w,
-                        bottom: 200.h,
+                        right: 60.w,
+                        bottom: 205.h,
                         child: SizedBox(
                           child: Column(
                             children: [
@@ -131,7 +131,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
           ),
           Positioned(
             left: 10.w,
-            top: 100.h,
+            right: -10.w,
+            top: 70.h,
             child: TopIcon(),
           ),
           Positioned(
@@ -256,9 +257,10 @@ class TopIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 175.w,
+      // width: 105.w,
       // height: 34.h,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(children: [
             Image.asset(
@@ -272,8 +274,11 @@ class TopIcon extends StatelessWidget {
           ]),
           SizedBox(height: 10.h),
           Text(
-            "Build and take your business to the next level",
-            style: TextStyle(color: Colors.white, fontSize: 15.sp),
+            "Build and take your business\nto the next level",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w400),
           )
         ],
       ),

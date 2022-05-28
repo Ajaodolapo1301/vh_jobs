@@ -28,7 +28,10 @@ class _RootWidgetState extends State<RootWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: VhjobsAppBar(centerTitle: true),
+      appBar: VhjobsAppBar(
+        centerTitle: true,
+        elevation: 0,
+      ),
       body: Stack(
         children: [
           DashboardRootWidget(

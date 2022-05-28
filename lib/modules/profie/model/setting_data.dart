@@ -46,13 +46,19 @@ class SettingItems {
   static List<SettingItem> loadSettingItem2(context) {
     return <SettingItem>[
       SettingItem(
-          title: "Personal Infomation",
+          title: "Personal Information",
           image: AssetResources.userCircle,
-          onTap: () {}),
+          onTap: () {
+            serviceLocator<NavigationService>()
+                .to(routeName: ProfileRoutes.profileInfo);
+          }),
       SettingItem(
           title: "Manage Address",
           image: AssetResources.addressBook,
-          onTap: () {}),
+          onTap: () {
+            serviceLocator<NavigationService>()
+                .to(routeName: ProfileRoutes.address);
+          }),
 
       SettingItem(
           title: "Security", image: AssetResources.padlock, onTap: () {}),

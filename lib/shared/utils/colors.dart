@@ -10,6 +10,7 @@ class AppColors {
   static Color vhBrown = const Color(0xffF4F4F4);
   static Color vhTextInputBorder = const Color(0xFFEEEEEE);
   static Color vhGreen = const Color(0xFF079300);
+  static Color colordark = const Color(0xFF79848C);
 
   static Color goMechoBlue50 = const Color(0xff515B76);
   static Color goMechoBlueContainer = const Color(0xffEDF4FC);

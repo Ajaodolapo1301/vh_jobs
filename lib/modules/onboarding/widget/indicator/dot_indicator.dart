@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DotIndicator extends StatefulWidget {
   final bool isActive;
@@ -13,16 +14,16 @@ class _DotIndicatorState extends State<DotIndicator> {
   Widget build(BuildContext context) {
     return widget.isActive
         ? AnimatedContainer(
-            duration: const Duration(milliseconds: 150),
-            height: 4,
-            width: 24,
+            duration: Duration(milliseconds: 150),
+            height: 4.h,
+            width: 47.w,
             decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(10.0))))
         : AnimatedContainer(
             duration: const Duration(milliseconds: 150),
-            height: 4,
-            width: 24,
+            height: 4.h,
+            width: 24.w,
             decoration: const BoxDecoration(
                 color: Colors.grey,
                 borderRadius: BorderRadius.all(Radius.circular(10.0))));

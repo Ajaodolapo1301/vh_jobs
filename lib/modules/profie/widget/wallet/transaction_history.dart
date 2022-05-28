@@ -51,7 +51,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
             WalletBalanceWidget(
               color: AppColors.vhBlue,
             ),
-            SizedBox(height: 24.h),
+            SizedBox(height: 10.h),
             Container(
               padding: EdgeInsets.all(10.w),
               decoration: BoxDecoration(

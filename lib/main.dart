@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           title: "Vh jobs",
           themeMode: ThemeMode.light,
           theme: ThemeData(
-            fontFamily: "Geomanist",
+            fontFamily: "Circular",
           ),
           // ignore: prefer_const_literals_to_create_immutables
           navigatorObservers: [

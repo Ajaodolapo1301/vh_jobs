@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:responsive_grid_list/responsive_grid_list.dart';
 
 import '../../../shared/style/border_style.dart';
 import '../../../shared/style/font_style.dart';
@@ -21,64 +20,85 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-        child: Column(
-          children: [
-            InputText(
-              labelText: 'What do you need to get done?',
-              prefixIcon: InkWell(
-                onTap: () {},
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: SvgPicture.asset(AssetResources.search),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+                child: InputText(
+                  labelText: 'What do you need to get done?',
+                  prefixIcon: InkWell(
+                    onTap: () {},
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: SvgPicture.asset(AssetResources.search),
+                    ),
+                  ),
+                  onTap: () {},
+                  keyboardType: TextInputType.visiblePassword,
+                  onSaved: (val) {},
                 ),
               ),
-              onTap: () {},
-              keyboardType: TextInputType.visiblePassword,
-              onSaved: (val) {},
-            ),
-            SizedBox(
-              height: 10.h,
-            ),
-            SingleChildScrollView(
-              child: Column(
+              // SizedBox(
+              //   height: 10.h,
+              // ),
+              Column(
                 children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Trending needs",
-                          style: kBold400.copyWith(fontSize: 25.sp),
-                        ),
-                        Text(
-                          "View All",
-                          style: kBold400.copyWith(
-                              fontSize: 15.sp, color: AppColors.vhBlue),
-                        )
-                      ]),
-                  ResponsiveGridList(
-                    horizontalGridSpacing: 15.w,
-                    horizontalGridMargin: 5.w,
-                    verticalGridMargin: 15.h,
-                    minItemWidth:
-                        300, // The minimum item width (can be smaller, if the layout constraints are smaller)
-                    minItemsPerRow:
-                        2, // The minimum items to show in a single row. Takes precedence over minItemWidth
-                    maxItemsPerRow:
-                        5, // The maximum items to show in a single row. Can be useful on large screens
-                    shrinkWrap:
-                        true, // shrinkWrap property of the ListView.builder()
-                    children:
-                        List.generate(DashboardModel.list.length, (index) {
-                      return DashboardWidget(
-                        dashboardModel: DashboardModel.list[index],
-                      );
-                    }), // The list of widgets in the list
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Trending needs",
+                            style: kBold400.copyWith(fontSize: 25.sp),
+                          ),
+                          Text(
+                            "View All",
+                            style: kBold400.copyWith(
+                                fontSize: 15.sp, color: AppColors.vhBlue),
+                          )
+                        ]),
                   ),
+
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
+                    child: Wrap(
+                      direction: Axis.horizontal,
+                      spacing: 15.w,
+                      runSpacing: 20.h,
+                      children: DashboardModel.list.map((e) {
+                        return DashboardWidget(
+                          dashboardModel: e,
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                  // ResponsiveGridList(
+                  //   horizontalGridSpacing: 15.w,
+                  //   horizontalGridMargin: 5.w,
+                  //   verticalGridMargin: 15.h,
+                  //   minItemWidth:
+                  //       300, // The minimum item width (can be smaller, if the layout constraints are smaller)
+                  //   minItemsPerRow:
+                  //       2, // The minimum items to show in a single row. Takes precedence over minItemWidth
+                  //   maxItemsPerRow:
+                  //       5, // The maximum items to show in a single row. Can be useful on large screens
+                  //   shrinkWrap:
+                  //       true, // shrinkWrap property of the ListView.builder()
+                  //   children:
+                  //       List.generate(DashboardModel.list.length, (index) {
+                  //     return DashboardWidget(
+                  //       dashboardModel: DashboardModel.list[index],
+                  //     );
+                  //   }), // The list of widgets in the list
+                  // ),
                 ],
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

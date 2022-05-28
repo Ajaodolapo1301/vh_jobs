@@ -5,6 +5,7 @@ import 'package:vh_jobs/config/app_startup.dart';
 import 'package:vh_jobs/shared/widgets/appbars/vhjob_appbar.dart';
 
 import '../../shared/navigation/navigation_service.dart';
+import '../../shared/style/font_style.dart';
 import '../../shared/utils/asset_images.dart';
 import '../../shared/utils/colors.dart';
 import '../../shared/widgets/button.dart';
@@ -25,6 +26,7 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: VhjobsAppBar(
+        elevation: 0,
         titleWidget: SvgPicture.asset(
           AssetResources.smallLogo,
           width: 40.w,
@@ -33,7 +35,7 @@ class _WelcomePageState extends State<WelcomePage> {
         backgroundColor: Colors.white,
       ),
       body: Container(
-        padding: EdgeInsets.all(20.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -49,12 +51,12 @@ class _WelcomePageState extends State<WelcomePage> {
             Text(
               'Want do you want to do',
               style: TextStyle(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w300,
-              ),
+                  fontSize: 15.sp,
+                  color: AppColors.vhDarkBlue,
+                  fontWeight: FontWeight.w300,
+                  letterSpacing: 0.75),
             ),
-            SizedBox(height: 10.h),
-
+            SizedBox(height: 21.h),
             InkWell(
               onTap: () {
                 setState(() {
@@ -63,7 +65,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 });
               },
               child: Container(
-                padding: EdgeInsets.all(8.h),
+                padding: EdgeInsets.all(25.w),
                 child: Center(
                   child: Text(
                     'I want to hire professional for my needs',
@@ -72,7 +74,9 @@ class _WelcomePageState extends State<WelcomePage> {
                       color:
                           first != null && first! ? Colors.white : Colors.black,
                       fontSize: 15.sp,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: first != null && first!
+                          ? FontWeight.w700
+                          : FontWeight.w400,
                     ),
                   ),
                 ),
@@ -86,7 +90,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 height: 98.h,
               ),
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 30.h),
             InkWell(
               onTap: () {
                 setState(() {
@@ -97,17 +101,20 @@ class _WelcomePageState extends State<WelcomePage> {
               child: Container(
                 child: Container(
                   width: 150.w,
-                  padding: EdgeInsets.all(15.w),
+                  padding: EdgeInsets.all(25.w),
                   child: Center(
                     child: Text(
                       'I am professional, i want to be a service provider',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontWeight: FontWeight.w400,
+                        fontWeight: second != null && second!
+                            ? FontWeight.w700
+                            : FontWeight.w400,
                         color: second != null && second!
                             ? Colors.white
                             : Colors.black,
-                        fontSize: 14.sp,
+                        letterSpacing: 0.7,
+                        fontSize: 15.sp,
                       ),
                     ),
                   ),
@@ -118,40 +125,28 @@ class _WelcomePageState extends State<WelcomePage> {
                     color: second != null && second!
                         ? AppColors.vhBlue
                         : Colors.white),
-                width: 213,
-                height: 98,
+                width: 213.w,
+                height: 98.h,
               ),
             ),
-            SizedBox(height: 50.h),
-
-            VhJobsButton(
-              text: "Continue",
-              onPressed: first != null || second != null
-                  ? () {
-                      serviceLocator<NavigationService>()
-                          .to(routeName: RootRoutes.home);
-                    }
-                  : null,
+            SizedBox(height: 40.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              child: VhJobsButton(
+                text: "Continue",
+                onPressed: first != null || second != null
+                    ? () {
+                        serviceLocator<NavigationService>()
+                            .to(routeName: RootRoutes.home);
+                      }
+                    : null,
+              ),
             ),
-            // InkWell(
-            //   onTap: () {},
-            //   child: Container(
-            //     margin: EdgeInsets.all(10.0),
-            //     padding: EdgeInsets.all(15),
-            //     child: Text(
-            //       'Continue',
-            //       style: TextStyle(color: Colors.white),
-            //       textAlign: TextAlign.center,
-            //     ),
-            //     decoration: BoxDecoration(
-            //         borderRadius: BorderRadius.circular(30.0),
-            //         color: AppColors.vhBlue),
-            //     width: 305,
-            //     height: 45,
-            //   ),
-            // ),
             SizedBox(height: 48.h),
-            Text('Need Help ?')
+            Text(
+              'Need Help ?',
+              style: kBold700.copyWith(color: AppColors.colordark),
+            )
           ],
         ),
       ),

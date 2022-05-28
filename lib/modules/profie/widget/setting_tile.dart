@@ -39,7 +39,7 @@ class _SettingTileState extends State<SettingTile> {
         InkWell(
           onTap: widget.onTap,
           child: Container(
-            padding: EdgeInsets.all(10.h),
+            padding: EdgeInsets.symmetric(vertical: 8.h),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

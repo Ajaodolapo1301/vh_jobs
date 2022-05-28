@@ -44,7 +44,7 @@ class VhJobsButton extends StatelessWidget {
               elevation: 0.0,
               shadowColor: Colors.transparent,
               padding: EdgeInsets.symmetric(
-                  vertical: verticalPadding ?? 15.h,
+                  vertical: verticalPadding ?? 12.h,
                   horizontal: horizontalPadding ?? 0),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.r),
@@ -60,18 +60,16 @@ class VhJobsButton extends StatelessWidget {
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
               primary: Colors.white,
-              // onSurface: color ?? AppColors.vhBlue,
+              onSurface: Colors.white,
               // elevation: 0.0,
               // shadowColor: Colors.transparent,
               padding: EdgeInsets.symmetric(
-                  vertical: verticalPadding ?? 15.h,
+                  vertical: verticalPadding ?? 12.h,
                   horizontal: horizontalPadding ?? 0),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.r),
-                  side: BorderSide(
-                    color: AppColors.vhBlue,
-                  )),
-              minimumSize: Size(width ?? double.infinity, height ?? 45.h)),
+                  side: BorderSide(color: borderColor ?? Colors.black)),
+              minimumSize: Size(width ?? double.infinity, height ?? 40.h)),
           child: text != null ? Text(text!, style: buttonTextStyle()) : child);
     }
   }

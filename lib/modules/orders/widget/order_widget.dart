@@ -128,9 +128,15 @@ class OrderWidget extends StatelessWidget {
                   padding:
                       EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                   child: orderModel.isExpired!
-                      ? VhJobsButton(text: "Renew Package", onPressed: () {})
+                      ? VhJobsButton(
+                          text: "Renew Package",
+                          onPressed: () {},
+                          verticalPadding: 12.h,
+                        )
                       : VhJobsButton(
-                          text: "Schedule Appiontment", onPressed: () {}),
+                          verticalPadding: 12.h,
+                          text: "Schedule Appiontment",
+                          onPressed: () {}),
                 ),
               ],
             ),

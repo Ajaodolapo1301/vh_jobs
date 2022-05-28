@@ -26,7 +26,7 @@ class _WalletBalanceWidgetState extends State<WalletBalanceWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      height: 120.h,
+      height: 100.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: widget.color),
       child: Stack(
@@ -87,6 +87,7 @@ class _WalletBalanceWidgetState extends State<WalletBalanceWidget> {
                     ),
                     secondChild: Image.asset(
                       AssetResources.secure,
+                      height: 30,
                       width: 200.w,
                     ),
                     crossFadeState: showFirstWidget

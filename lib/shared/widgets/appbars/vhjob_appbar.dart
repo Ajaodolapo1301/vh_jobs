@@ -36,7 +36,7 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return gradientAppBar
         ? AppBar(
-            elevation: 2,
+            elevation: elevation,
             shadowColor: shadowColor,
             backgroundColor: backgroundColor,
             leadingWidth: leadingWidth,
@@ -60,8 +60,8 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
                 : centerTitle && titleText == null
                     ? SvgPicture.asset(
                         AssetResources.smallLogo,
-                        width: 30.w,
-                        height: 25.h,
+                        width: 25.w,
+                        height: 20.h,
                         color: Colors.white,
                       )
                     : Text(
@@ -93,7 +93,7 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
             actions: [trailing ?? const SizedBox()],
           )
         : AppBar(
-            elevation: 2,
+            elevation: elevation,
             shadowColor: shadowColor,
             backgroundColor: backgroundColor,
             leadingWidth: leadingWidth, // <-- Use this
@@ -105,8 +105,8 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
                 : centerTitle && titleText == null
                     ? SvgPicture.asset(
                         AssetResources.smallLogo,
-                        width: 30.w,
-                        height: 25.h,
+                        width: 25.w,
+                        height: 20.h,
                       )
                     : Text(
                         titleText!,

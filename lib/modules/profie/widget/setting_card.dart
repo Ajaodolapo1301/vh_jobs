@@ -15,7 +15,7 @@ class SettingCard extends StatelessWidget {
       children: [
         Container(
           // color: AppColors.goMechoWhite,
-          margin: EdgeInsets.only(bottom: 16.h, top: 20.h),
+          margin: EdgeInsets.only(bottom: 10.h, top: 20.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -24,11 +24,11 @@ class SettingCard extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.w700, fontSize: 17.sp, height: 1.2),
               ),
-              SizedBox(height: 5.h),
+              SizedBox(height: 8.h),
               SettingDivider(
                 color: AppColors.vhLightBlue,
               ),
-              SizedBox(height: 5.h),
+              // SizedBox(height: 5.h),
               ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
@@ -72,11 +72,10 @@ class SettingCard2 extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.w700, fontSize: 17.sp, height: 1.2),
               ),
-              SizedBox(height: 5.h),
+              SizedBox(height: 8.h),
               SettingDivider(
                 color: AppColors.vhLightBlue,
               ),
-              SizedBox(height: 5.h),
               ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),

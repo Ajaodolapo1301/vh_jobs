@@ -58,7 +58,9 @@ class _AddWalletState extends State<AddWallet> {
                           fontSize: 15.sp, fontWeight: FontWeight.w500),
                     ),
                     SizedBox(height: 16.h),
-                    const Divider(),
+                    Divider(
+                      color: AppColors.vhBlue,
+                    ),
                     SizedBox(height: 16.h),
                     Text(
                       "Enter the amount and choose the card top up your Vhjobs wallet ",
@@ -72,6 +74,7 @@ class _AddWalletState extends State<AddWallet> {
                       type: ButtonType.outlined,
                       height: 30.h,
                       color: Colors.white,
+                      borderColor: AppColors.vhBlue,
                       text: "Top up with card",
                     )
                   ]),
