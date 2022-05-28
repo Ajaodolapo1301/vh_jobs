@@ -24,13 +24,18 @@ class OrderWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      orderModel.text!,
-                      style: TextStyle(
-                          fontWeight: FontWeight.w900, fontSize: 15.sp),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                      child: Text(
+                        orderModel.text!,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w900, fontSize: 15.sp),
+                      ),
                     ),
                     Container(
-                        padding: EdgeInsets.all(10.w),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10.w, vertical: 5.h),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -50,7 +55,8 @@ class OrderWidget extends StatelessWidget {
                             ])),
                     if (orderModel.appointment != null)
                       Container(
-                          padding: EdgeInsets.all(10.w),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 10.w, vertical: 5.h),
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
