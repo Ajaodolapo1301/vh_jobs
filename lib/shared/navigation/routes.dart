@@ -3,6 +3,8 @@ import 'package:vh_jobs/modules/profie/widget/IdentityVerification/utility_issue
 
 import '../../modules/auth/root.dart';
 import '../../modules/auth/route/routes.dart';
+import '../../modules/dashboard/route/routes.dart';
+import '../../modules/dashboard/widget/view_all.dart';
 import '../../modules/onboarding/root.dart';
 import '../../modules/onboarding/route/routes.dart';
 import '../../modules/onboarding/welcome_screen.dart';
@@ -133,5 +135,8 @@ var routes = (RouteSettings settings) {
 
     case ProfileRoutes.paymentMethod:
       return FadeRoute(page: const PaymentMethod());
+
+    case DashboardRoutes.viewAll:
+      return FadeRoute(page: const ViewAll());
   }
 };

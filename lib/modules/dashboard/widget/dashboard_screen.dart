@@ -1,7 +1,10 @@
 import "package:flutter/material.dart";
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:vh_jobs/config/app_startup.dart';
+import 'package:vh_jobs/modules/dashboard/route/routes.dart';
 
+import '../../../shared/navigation/navigation_service.dart';
 import '../../../shared/style/border_style.dart';
 import '../../../shared/style/font_style.dart';
 import '../../../shared/utils/asset_images.dart';
@@ -20,74 +23,74 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: InkWell(
-        onTap: () {
-          closePredictionOverlay();
-        },
-        child: Container(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-                  child: InputText(
-                    labelText: 'What do you need to get done?',
-                    prefixIcon: InkWell(
-                      onTap: () {},
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        child: SvgPicture.asset(AssetResources.search),
-                      ),
+      body: Container(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+                child: InputText(
+                  labelText: 'What do you need to get done?',
+                  prefixIcon: InkWell(
+                    onTap: () {},
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: SvgPicture.asset(AssetResources.search),
                     ),
-                    onTap: () {
-                      print("ddd");
-                      showPredictions();
-                    },
-                    keyboardType: TextInputType.visiblePassword,
-                    onSaved: (val) {},
                   ),
+                  onTap: () {
+                    // print("ddd");
+                    // showPredictions();
+                  },
+                  keyboardType: TextInputType.visiblePassword,
+                  onSaved: (val) {},
                 ),
-                // SizedBox(
-                //   height: 10.h,
-                // ),
-                Column(
-                  children: [
-                    Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Trending needs",
-                              style: kBold400.copyWith(fontSize: 25.sp),
-                            ),
-                            Text(
+              ),
+              // SizedBox(
+              //   height: 10.h,
+              // ),
+              Column(
+                children: [
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Trending needs",
+                            style: kBold400.copyWith(fontSize: 25.sp),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              serviceLocator<NavigationService>()
+                                  .to(routeName: DashboardRoutes.viewAll);
+                            },
+                            child: Text(
                               "View All",
                               style: kBold400.copyWith(
                                   fontSize: 15.sp, color: AppColors.vhBlue),
-                            )
-                          ]),
+                            ),
+                          )
+                        ]),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
+                    child: Wrap(
+                      direction: Axis.horizontal,
+                      spacing: 15.w,
+                      runSpacing: 20.h,
+                      children: DashboardModel.list.map((e) {
+                        return DashboardWidget(
+                          dashboardModel: e,
+                        );
+                      }).toList(),
                     ),
-                    Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
-                      child: Wrap(
-                        direction: Axis.horizontal,
-                        spacing: 15.w,
-                        runSpacing: 20.h,
-                        children: DashboardModel.list.map((e) {
-                          return DashboardWidget(
-                            dashboardModel: e,
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
+                  ),
+                ],
+              )
+            ],
           ),
         ),
       ),

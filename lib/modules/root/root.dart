@@ -20,8 +20,7 @@ class _RootWidgetState extends State<RootWidget> {
   @override
   void initState() {
     currentTab = widget.currentTab ?? Tabs.home;
-    // GetIt.I<AnalyticService>().addEvent(name: "Home_Page_Opened");
-    // locator<SignInCubit>().getUserProfile();
+
     super.initState();
   }
 
