@@ -74,7 +74,7 @@ class GovtWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 0.h),
         child: Container(

@@ -13,4 +13,5 @@ class ProfileRoutes {
   static const utilityBill = "/utilityBill";
   static const facial = "/facial";
   static const successPage = "/successPage";
+  static const uploadNationalId = "/uploadNationalId";
 }

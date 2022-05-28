@@ -34,7 +34,7 @@ class _SuccessPageState extends State<SuccessPage> {
                     height: 20.h,
                   ),
                   Text(
-                    "Facial verificationtion successful",
+                    "Facial verification successful",
                     style: kBold900,
                   )
                 ],

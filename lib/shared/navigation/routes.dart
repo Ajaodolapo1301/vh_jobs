@@ -15,6 +15,7 @@ import '../../modules/profie/widget/IdentityVerification/facial.dart';
 import '../../modules/profie/widget/IdentityVerification/govt_issue_id.dart';
 import '../../modules/profie/widget/IdentityVerification/root.dart';
 import '../../modules/profie/widget/IdentityVerification/success_page.dart';
+import '../../modules/profie/widget/IdentityVerification/upload_page.dart';
 import '../../modules/profie/widget/manageAddress/add_address.dart';
 import '../../modules/profie/widget/manageAddress/address_list.dart';
 import '../../modules/profie/widget/manageAddress/root.dart';
@@ -113,5 +114,8 @@ var routes = (RouteSettings settings) {
 
     case ProfileRoutes.successPage:
       return FadeRoute(page: const SuccessPage());
+
+    case ProfileRoutes.uploadNationalId:
+      return FadeRoute(page: const UploadNationalId());
   }
 };
