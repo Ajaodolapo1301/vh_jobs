@@ -15,4 +15,5 @@ class ProfileRoutes {
   static const successPage = "/successPage";
   static const uploadNationalId = "/uploadNationalId";
   static const notificationScreen = "/notificationScreen";
+  static const referral = "/referral";
 }

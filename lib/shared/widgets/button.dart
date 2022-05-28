@@ -54,7 +54,10 @@ class VhJobsButton extends StatelessWidget {
                         : borderColor ?? color ?? AppColors.vhBlue as Color),
               ),
               minimumSize: Size(width ?? double.infinity, height ?? 45.h)),
-          child: text != null ? Text(text!, style: buttonTextStyle()) : child);
+          child: text != null
+              ? Text(text!,
+                  textAlign: TextAlign.center, style: buttonTextStyle())
+              : child);
     } else {
       return ElevatedButton(
           onPressed: onPressed,
@@ -70,7 +73,10 @@ class VhJobsButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30.r),
                   side: BorderSide(color: borderColor ?? Colors.black)),
               minimumSize: Size(width ?? double.infinity, height ?? 40.h)),
-          child: text != null ? Text(text!, style: buttonTextStyle()) : child);
+          child: text != null
+              ? Text(text!,
+                  textAlign: TextAlign.center, style: buttonTextStyle())
+              : child);
     }
   }
 

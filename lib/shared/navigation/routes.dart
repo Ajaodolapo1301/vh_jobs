@@ -21,6 +21,7 @@ import '../../modules/profie/widget/manageAddress/address_list.dart';
 import '../../modules/profie/widget/manageAddress/root.dart';
 import '../../modules/profie/widget/notification/root.dart';
 import '../../modules/profie/widget/profile_info.dart';
+import '../../modules/profie/widget/referrals/root.dart';
 import '../../modules/profie/widget/security/root.dart';
 import '../../modules/profie/widget/wallet/add_wallet.dart';
 import '../../modules/profie/widget/wallet/select_card.dart';
@@ -121,5 +122,8 @@ var routes = (RouteSettings settings) {
 
     case ProfileRoutes.notificationScreen:
       return FadeRoute(page: const NotificationScreen());
+
+    case ProfileRoutes.referral:
+      return FadeRoute(page: const Referral());
   }
 };

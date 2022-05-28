@@ -106,7 +106,13 @@ class SettingItems {
 
   static List<SettingItem> loadSettingItem3(context) {
     return <SettingItem>[
-      SettingItem(title: "Referral", image: AssetResources.gift, onTap: () {}),
+      SettingItem(
+          title: "Referral",
+          image: AssetResources.gift,
+          onTap: () {
+            serviceLocator<NavigationService>()
+                .to(routeName: ProfileRoutes.referral);
+          }),
       SettingItem(
           title: "Credit Rewards", image: AssetResources.coins, onTap: () {}),
     ];

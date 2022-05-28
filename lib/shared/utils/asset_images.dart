@@ -63,6 +63,7 @@ class AssetResources {
   static const user = "assets/images/profile/user.svg";
 
   static const check = "assets/images/profile/check.png";
+  static const referral = "assets/images/profile/referral.svg";
 
   //wallet
   static const filter = "assets/images/profile/mi_filter.svg";
