@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-// import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -65,7 +63,7 @@ class _Orders2State extends State<Orders2> {
                 ],
               ),
               SizedBox(
-                height: 10,
+                height: 10.h,
               ),
               const Divider(
                 thickness: 1,

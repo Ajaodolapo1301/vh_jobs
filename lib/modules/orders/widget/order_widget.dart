@@ -16,16 +16,105 @@ class OrderWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  orderModel.text!,
-                  style:
-                      TextStyle(fontWeight: FontWeight.w900, fontSize: 15.sp),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 3,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      orderModel.text!,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w900, fontSize: 15.sp),
+                    ),
+                    Container(
+                        padding: EdgeInsets.all(10.w),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Package:',
+                                style: kBold400.copyWith(
+                                    color: Colors.black,
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                orderModel.package!,
+                                style: kBold400.copyWith(
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w300),
+                              )
+                            ])),
+                    if (orderModel.appointment != null)
+                      Container(
+                          padding: EdgeInsets.all(10.w),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  orderModel.appointment!,
+                                  style: kBold400.copyWith(
+                                      color: Colors.black,
+                                      fontSize: 15.sp,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                Text(
+                                  "Alfred Pascal",
+                                  style: kBold400.copyWith(
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w300),
+                                )
+                              ])),
+                    if (orderModel.isExpired!)
+                      Container(
+                          padding: EdgeInsets.all(10.w),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Expired:",
+                                  style: kBold400.copyWith(
+                                      color: Colors.black,
+                                      fontSize: 15.sp,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                Text(
+                                  "Feb 27",
+                                  style: kBold400.copyWith(
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w300),
+                                )
+                              ])),
+                    if (!orderModel.isExpired!)
+                      Container(
+                        padding: EdgeInsets.all(10.w),
+                        child: RichText(
+                          text: TextSpan(
+                              text: 'Active:\n',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15.sp,
+                                  color: Colors.black),
+
+                              // ignore: prefer_const_literals_to_create_immutables
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: 'Apr2- Jun 2',
+                                  style: kBold400.copyWith(
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                              ]),
+                        ),
+                      ),
+                  ],
                 ),
-                Container(
+              ),
+              Expanded(
+                child: Container(
                   padding: EdgeInsets.all(8.w),
                   decoration: BoxDecoration(
                       color: orderModel.isExpired!
@@ -39,87 +128,10 @@ class OrderWidget extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: const TextStyle(color: Colors.white),
                   ),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
-          Container(
-              padding: EdgeInsets.all(10.w),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Package:',
-                      style: kBold400.copyWith(
-                          color: Colors.black,
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    Text(
-                      orderModel.package!,
-                      style: kBold400.copyWith(
-                          fontSize: 13.sp, fontWeight: FontWeight.w300),
-                    )
-                  ])),
-          if (orderModel.appointment != null)
-            Container(
-                padding: EdgeInsets.all(10.w),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        orderModel.appointment!,
-                        style: kBold400.copyWith(
-                            color: Colors.black,
-                            fontSize: 15.sp,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      Text(
-                        "Alfred Pascal",
-                        style: kBold400.copyWith(
-                            fontSize: 13.sp, fontWeight: FontWeight.w300),
-                      )
-                    ])),
-          if (orderModel.isExpired!)
-            Container(
-                padding: EdgeInsets.all(10.w),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Expired:",
-                        style: kBold400.copyWith(
-                            color: Colors.black,
-                            fontSize: 15.sp,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      Text(
-                        "Feb 27",
-                        style: kBold400.copyWith(
-                            fontSize: 13.sp, fontWeight: FontWeight.w300),
-                      )
-                    ])),
-          if (!orderModel.isExpired!)
-            Container(
-              padding: EdgeInsets.all(10.w),
-              child: RichText(
-                text: TextSpan(
-                    text: 'Active:\n',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 15.sp,
-                        color: Colors.black),
-
-                    // ignore: prefer_const_literals_to_create_immutables
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: 'Apr2- Jun 2',
-                        style: kBold400.copyWith(
-                            fontSize: 13.sp, fontWeight: FontWeight.w300),
-                      ),
-                    ]),
-              ),
-            ),
           if (orderModel.slots!.isNotEmpty)
             Column(
               children: [
@@ -131,10 +143,10 @@ class OrderWidget extends StatelessWidget {
                       ? VhJobsButton(
                           text: "Renew Package",
                           onPressed: () {},
-                          verticalPadding: 12.h,
+                          verticalPadding: 10.h,
                         )
                       : VhJobsButton(
-                          verticalPadding: 12.h,
+                          verticalPadding: 10.h,
                           text: "Schedule Appiontment",
                           onPressed: () {}),
                 ),
