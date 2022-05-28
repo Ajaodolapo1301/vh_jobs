@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../shared/utils/colors.dart';
 import '../../../../shared/widgets/appbars/vhjob_appbar.dart';
+import '../../../../shared/widgets/button.dart';
 import '../../../../shared/widgets/forms/custom_text_field.dart';
 
 class AddAddress extends StatefulWidget {
@@ -36,85 +37,94 @@ class _AddAddressState extends State<AddAddress> {
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children: [
-            CustomTextField(
-              useMargin: false,
-              hint: "Address Feed (e.g Home, Office, Family)",
-              textEditingController: address,
+            Column(
+              children: [
+                CustomTextField(
+                  useMargin: false,
+                  hint: "Address Feed (e.g Home, Office, Family)",
+                  textEditingController: address,
 
-              validator: (v) {
-                if (v!.isEmpty) {
-                  return "Empty";
-                }
+                  validator: (v) {
+                    if (v!.isEmpty) {
+                      return "Empty";
+                    }
 
-                return null;
-              },
-              // header: "First and Last Name",
-            ),
-            Divider(
-              color: AppColors.vhBlue,
-            ),
-            CustomTextField(
-              useMargin: false,
-              hint: "Street or Estate & Number",
-              textEditingController: street,
-              validator: (v) {
-                if (v!.isEmpty) {
-                  return "Empty";
-                }
+                    return null;
+                  },
+                  // header: "First and Last Name",
+                ),
+                Divider(
+                  color: AppColors.vhBlue,
+                ),
+                CustomTextField(
+                  useMargin: false,
+                  hint: "Street or Estate & Number",
+                  textEditingController: street,
+                  validator: (v) {
+                    if (v!.isEmpty) {
+                      return "Empty";
+                    }
 
-                return null;
-              },
-              // header: "First and Last Name",
-            ),
-            Divider(
-              color: AppColors.vhBlue,
-            ),
-            CustomTextField(
-              hint: "House or Apartment Number",
-              useMargin: false,
-              textEditingController: houseApartment,
+                    return null;
+                  },
+                  // header: "First and Last Name",
+                ),
+                Divider(
+                  color: AppColors.vhBlue,
+                ),
+                CustomTextField(
+                  hint: "House or Apartment Number",
+                  useMargin: false,
+                  textEditingController: houseApartment,
 
-              validator: (v) {
-                if (v!.isEmpty) {
-                  return "Empty";
-                }
+                  validator: (v) {
+                    if (v!.isEmpty) {
+                      return "Empty";
+                    }
 
-                return null;
-              },
-              // header: "First and Last Name",
-            ),
-            Divider(
-              color: AppColors.vhBlue,
-            ),
-            CustomTextField(
-              useMargin: false,
-              hint: "City",
-              textEditingController: city,
+                    return null;
+                  },
+                  // header: "First and Last Name",
+                ),
+                Divider(
+                  color: AppColors.vhBlue,
+                ),
+                CustomTextField(
+                  useMargin: false,
+                  hint: "City",
+                  textEditingController: city,
 
-              validator: (v) {
-                if (v!.isEmpty) {
-                  return "Empty";
-                }
+                  validator: (v) {
+                    if (v!.isEmpty) {
+                      return "Empty";
+                    }
 
-                return null;
-              },
-              // header: "First and Last Name",
-            ),
-            Divider(
-              color: AppColors.vhBlue,
-            ),
-            CustomTextField(
-              useMargin: false,
-              textEditingController: state,
-              hint: "State",
-              validator: (v) {
-                if (v!.isEmpty) {
-                  return "Empty";
-                }
+                    return null;
+                  },
+                  // header: "First and Last Name",
+                ),
+                Divider(
+                  color: AppColors.vhBlue,
+                ),
+                CustomTextField(
+                  useMargin: false,
+                  textEditingController: state,
+                  hint: "State",
+                  validator: (v) {
+                    if (v!.isEmpty) {
+                      return "Empty";
+                    }
 
-                return null;
-              },
-              // header: "First and Last Name",
+                    return null;
+                  },
+                  // header: "First and Last Name",
+                ),
+              ],
+            ),
+            Spacer(),
+            VhJobsButton(verticalPadding: 10.h, text: "Save", onPressed: () {}),
+            SizedBox(
+              height: 25.h,
             ),
           ],
         ),
