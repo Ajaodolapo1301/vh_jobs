@@ -10,6 +10,7 @@ import '../../modules/orders/empty.dart';
 import '../../modules/orders/root2.dart';
 import '../../modules/orders/route/routes.dart';
 import '../../modules/profie/route/routes.dart';
+import '../../modules/profie/widget/IdentityVerification/root.dart';
 import '../../modules/profie/widget/manageAddress/add_address.dart';
 import '../../modules/profie/widget/manageAddress/address_list.dart';
 import '../../modules/profie/widget/manageAddress/root.dart';
@@ -93,5 +94,8 @@ var routes = (RouteSettings settings) {
 
     case ProfileRoutes.security:
       return FadeRoute(page: const Security());
+
+    case ProfileRoutes.identityVerification:
+      return FadeRoute(page: const IdentityVerification());
   }
 };

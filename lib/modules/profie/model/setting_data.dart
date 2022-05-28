@@ -70,8 +70,17 @@ class SettingItems {
       SettingItem(
           title: "Identity Verification",
           image: AssetResources.security,
-          onTap: () {}),
-      SettingItem(title: "Review", image: AssetResources.review, onTap: () {}),
+          onTap: () {
+            serviceLocator<NavigationService>()
+                .to(routeName: ProfileRoutes.identityVerification);
+          }),
+      SettingItem(
+          title: "Review",
+          image: AssetResources.review,
+          onTap: () {
+            serviceLocator<NavigationService>()
+                .to(routeName: ProfileRoutes.identityVerification);
+          }),
       SettingItem(
           title: "Notification",
           image: AssetResources.notification,

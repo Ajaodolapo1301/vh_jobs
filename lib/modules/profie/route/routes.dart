@@ -8,4 +8,5 @@ class ProfileRoutes {
   static const addresslist = "/address-list";
   static const addAddress = "/add-address";
   static const security = "/security";
+  static const identityVerification = "/identityVerification";
 }

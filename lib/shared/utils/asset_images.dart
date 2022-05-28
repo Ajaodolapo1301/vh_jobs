@@ -58,6 +58,10 @@ class AssetResources {
   static const sms = "assets/images/profile/sms.svg";
   static const google = "assets/images/profile/google.svg";
 
+  static const document = "assets/images/profile/document.svg";
+  static const idCard = "assets/images/profile/id-card.svg";
+  static const user = "assets/images/profile/user.svg";
+
   //wallet
   static const filter = "assets/images/profile/mi_filter.svg";
   static const inflow = "assets/images/profile/inflow.svg";
