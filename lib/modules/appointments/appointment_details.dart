@@ -7,6 +7,7 @@ import 'package:vh_jobs/modules/appointments/routes/route.dart';
 import 'package:vh_jobs/modules/appointments/widgets/access_code.dart';
 import 'package:vh_jobs/modules/appointments/widgets/card_tile.dart';
 import 'package:vh_jobs/modules/appointments/widgets/checkout_code.dart';
+import 'package:vh_jobs/modules/appointments/widgets/meal_chip.dart';
 import 'package:vh_jobs/modules/appointments/widgets/service_provider_card.dart';
 import 'package:vh_jobs/shared/navigation/navigation_service.dart';
 import 'package:vh_jobs/shared/utils/colors.dart';
@@ -164,14 +165,19 @@ class _AppointmentDetailsScreenState extends State<AppointmentDetailsScreen> {
               ),
             ),
             SizedBox(height: 10.h),
-            const CardTile(text: 'Meal options'),
+            CardTile(
+              text: 'Meal options',
+              onTap: () => GetIt.I
+                  .get<NavigationService>()
+                  .to(routeName: AppointmentRoute.appointmentMealOptions),
+            ),
             SizedBox(height: 8.h),
             Wrap(
               spacing: 8.w,
               runSpacing: 8.h,
               children: List.generate(
                 5,
-                (index) => _mealChip('Egusi soup'),
+                (index) => const MealChip(meal: 'Egusi soup'),
               ),
             ),
             const AccessCode(),
@@ -221,20 +227,6 @@ class _AppointmentDetailsScreenState extends State<AppointmentDetailsScreen> {
             style: AppStyles.bodySmallBoldOpacity,
           ),
         ],
-      );
-
-  Widget _mealChip(String text) => Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5.r),
-          border: Border.all(color: AppColors.dark5),
-        ),
-        child: Text(
-          text,
-          style: AppStyles.captionBold.copyWith(
-            color: AppColors.dark5,
-          ),
-        ),
       );
 
   _datepickerDialog() => showGeneralDialog(

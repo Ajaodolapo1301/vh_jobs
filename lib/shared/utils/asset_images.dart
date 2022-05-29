@@ -64,4 +64,8 @@ class AssetResources {
 
   //appointment
   static const anyone = "assets/images/appointment/any_sp.svg";
+  static const pending = "assets/images/appointment/pending.svg";
+  static const matched = "assets/images/appointment/matched.svg";
+  static const message = "assets/images/appointment/message.svg";
+  static const appointmentSuccess = "assets/images/appointment/success.svg";
 }

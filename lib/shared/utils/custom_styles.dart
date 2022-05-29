@@ -70,6 +70,12 @@ class AppStyles {
     color: AppColors.dark5,
     fontWeight: FontWeight.w700,
   );
+  static TextStyle headline3 = TextStyle(
+    height: 1.23,
+    fontSize: 21.sp,
+    color: AppColors.dark5,
+    fontWeight: FontWeight.w400,
+  );
   static TextStyle headline3Bold = TextStyle(
     height: 1.23,
     fontSize: 21.sp,

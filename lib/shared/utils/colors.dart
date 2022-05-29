@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class AppColors {
+  AppColors._();
   static Color vhBlue = const Color(0xFF1C71B7);
   static Color vhLightBlue = const Color(0xFFB3D0E7);
   static Color vhDarkBlue = const Color(0xFF0E395C);
