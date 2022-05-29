@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vh_jobs/modules/appointments/root.dart';
 
 import '../../shared/widgets/appbars/vhjob_appbar.dart';
 import '../dashboard/root.dart';
@@ -27,20 +28,16 @@ class _RootWidgetState extends State<RootWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: VhjobsAppBar(
-        centerTitle: true,
-        elevation: 0,
-      ),
       body: Stack(
         children: [
           DashboardRootWidget(
             isCurrent: currentTab == Tabs.home,
             key: Key(Tabs.home.name),
           ),
-          // ProductRootWidget(
-          //   isCurrent: currentTab == Tabs.product,
-          //   key: Key(Tabs.product.name),
-          // ),
+          AppointmentRootWidget(
+            isCurrent: currentTab == Tabs.appointment,
+            key: Key(Tabs.appointment.name),
+          ),
           OrderRootWidget(
             isCurrent: currentTab == Tabs.order,
             key: Key(Tabs.order.name),

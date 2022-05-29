@@ -51,7 +51,7 @@ class VhJobsButton extends StatelessWidget {
                 side: BorderSide(
                     color: onPressed == null
                         ? Colors.transparent
-                        : borderColor ?? color ?? AppColors.vhBlue as Color),
+                        : borderColor ?? color ?? AppColors.vhBlue),
               ),
               minimumSize: Size(width ?? double.infinity, height ?? 45.h)),
           child: text != null

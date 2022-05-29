@@ -13,23 +13,16 @@ class AssetResources {
   static const thickArrow = "assets/images/onboarding/thickArrow.svg";
 
   // HOME unselected
-  static const unSelectedAppointment = "assets/images/home/appointment.svg";
+  static const unSelectedAppointment =
+      "assets/images/home/appointment.svg";
   static const unSelectedOrder = "assets/images/home/order.svg";
   static const unSelectedProfile = "assets/images/home/profile.svg";
   static const unselectedHome = "assets/images/home/dashboard-outlined.svg";
-  // "assets/images/dashboard/appointment.svg";
-  // static const unSelectedOrder = "assets/images/home/order.svg";
-  // static const unSelectedProfile = "assets/images/home/profile.svg";
-  // static const unselectedHome = "assets/images/home/dashboard-outlined.svg";
 
   static const selectedAppointment = "assets/images/home/appointment.svg";
   static const selectedOrder = "assets/images/home/selectedOrder.svg";
   static const selectedProfile = "assets/images/home/selectedProfile.svg";
   static const selectedHome = "assets/images/home/dashboard-filled.svg";
-  // static const selectedAppointment = "assets/images/home/appointment.svg";
-  // static const selectedOrder = "assets/images/home/selectedOrder.svg";
-  // static const selectedProfile = "assets/images/home/selectedProfile.svg";
-  // static const selectedHome = "assets/images/home/dashboard-filled.svg";
 
   static const makeUp = "assets/images/home/makeup.svg";
   static const cleaning = "assets/images/home/cleaning.svg";
@@ -37,6 +30,7 @@ class AssetResources {
   static const cooking = "assets/images/home/cooking.svg";
 
 //  Profile
+
   static const addressBook = "assets/images/profile/address-book.svg";
   static const biCredit = "assets/images/profile/bi_credit-card.svg";
   static const helpChat = "assets/images/profile/chat-help.svg";
@@ -76,6 +70,13 @@ class AssetResources {
   static const openEye = "assets/images/profile/open_eye.svg";
   static const secure = "assets/images/profile/portfolio_secure.png";
   static const search = "assets/images/profile/search.svg";
+
+  //appointment
+  static const anyone = "assets/images/appointment/any_sp.svg";
+  static const pending = "assets/images/appointment/pending.svg";
+  static const matched = "assets/images/appointment/matched.svg";
+  static const message = "assets/images/appointment/message.svg";
+  static const appointmentSuccess = "assets/images/appointment/success.svg";
 
 //  classic
   static const logoCard = "assets/images/classic/logoCard.svg";

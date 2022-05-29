@@ -35,37 +35,39 @@ class VhCacheImage extends StatelessWidget {
       child: getImageType(imgUrl) == ImageType.svg
           ? svgImageViewer()
           : getImageType(imgUrl) == ImageType.png
-              ? Image.asset(
-                  imgUrl,
-                  width: width,
-                  height: height,
-                  fit: BoxFit.cover,
-                )
-              : CachedNetworkImage(
-                  imageUrl: imgUrl,
-                  // placeholder: (context, url) => showPlaceholder
-                  //     ? shimmerContainer()
-                  //     : Container(
-                  //         height: height,
-                  //         width: width,
-                  //         constraints: BoxConstraints(
-                  //           maxHeight: height / 2,
-                  //           maxWidth: width / 2,
-                  //         ),
-                  //         child: Lottie.asset('assets/json/jeetar_loader.json')),
-                  // errorWidget: (context, url, error) => Container(
-                  //   height: 20.h,
-                  //   width: 20.w,
-                  //   child: errorWidget ??
-                  //       SvgPicture.asset(AssetResources.BROKEN_ICON,
-                  //           fit: this.boxFit),
-                  // ),
-                  height: height,
-                  width: width,
-                  fit: boxFit,
-                  memCacheHeight: memCacheHeight,
-                  memCacheWidth: memCacheWidth,
-                ),
+              ? !imgUrl.contains('.com')
+                  ? Image.asset(
+                      imgUrl,
+                      width: width,
+                      height: height,
+                      fit: BoxFit.cover,
+                    )
+                  : CachedNetworkImage(
+                      imageUrl: imgUrl,
+                      // placeholder: (context, url) => showPlaceholder
+                      //     ? shimmerContainer()
+                      //     : Container(
+                      //         height: height,
+                      //         width: width,
+                      //         constraints: BoxConstraints(
+                      //           maxHeight: height / 2,
+                      //           maxWidth: width / 2,
+                      //         ),
+                      //         child: Lottie.asset('assets/json/jeetar_loader.json')),
+                      // errorWidget: (context, url, error) => Container(
+                      //   height: 20.h,
+                      //   width: 20.w,
+                      //   child: errorWidget ??
+                      //       SvgPicture.asset(AssetResources.BROKEN_ICON,
+                      //           fit: this.boxFit),
+                      // ),
+                      height: height,
+                      width: width,
+                      fit: boxFit,
+                      memCacheHeight: memCacheHeight,
+                      memCacheWidth: memCacheWidth,
+                    )
+              : const SizedBox.shrink(),
     );
   }
 

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class AppColors {
+  AppColors._();
   static Color vhBlue = const Color(0xFF1C71B7);
   static Color vhLightBlue = const Color(0xFFB3D0E7);
   static Color vhDarkBlue = const Color(0xFF0E395C);
@@ -22,6 +23,16 @@ class AppColors {
   static Color goMechoBlueStroke = const Color(0xFFEEEFF2);
   static Color goMechoStroke = const Color(0xFFE2E4E9);
   static Color goMechoLightGreen = const Color(0xFFE3F3E3);
-  static Color goMechoLighterGreen = const Color(0xFEDF5E8);
+  static Color goMechoLighterGreen = const Color(0xFFEDF5E8);
   static Color goMechoBannerBlue = const Color(0xFFEBF2F8);
+
+  static const Color dark5 = Color(0xFF061725);
+  static const Color error = Color(0xFFEF1313);
+  static const Color color1 = Color(0xFF1C71B7);
+  static const Color variant2 = Color(0xFF934200);
+  static const Color variant3 = Color(0xFF079300);
+  static const Color color5 = Color(0xFFB3D0E7);
+  static const Color color6 = Color(0xFFF4F4F4);
+  static const Color color7 = Color(0xFFDDF0FF);
+  static const Color innerBorder = Color(0xFFBBC1C7);
 }

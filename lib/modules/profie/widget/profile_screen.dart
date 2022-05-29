@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vh_jobs/modules/profie/route/routes.dart';
 import 'package:vh_jobs/modules/profie/widget/setting_card.dart';
+import 'package:vh_jobs/shared/widgets/appbars/vhjob_appbar.dart';
 
 import '../../../config/app_startup.dart';
 import '../../../shared/navigation/navigation_service.dart';
@@ -27,6 +28,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF8FDFF),
+      appBar: VhjobsAppBar(
+        elevation: 0,
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         physics: const ClampingScrollPhysics(),
         child: Column(

@@ -94,7 +94,6 @@ flutter:
   assets:
     - assets/
     - assets/images/onboarding/
-    - assets/images/classic/
     - assets/images/profile/
     - assets/images/home/
 

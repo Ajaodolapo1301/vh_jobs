@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vh_jobs/config/app_startup.dart';
 import 'package:vh_jobs/modules/dashboard/route/routes.dart';
+import 'package:vh_jobs/shared/widgets/appbars/vhjob_appbar.dart';
 
 import '../../../shared/navigation/navigation_service.dart';
 import '../../../shared/style/border_style.dart';
@@ -23,6 +24,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: VhjobsAppBar(
+        elevation: 0,
+        centerTitle: true,
+      ),
       body: Container(
         child: SingleChildScrollView(
           child: Column(
@@ -38,10 +43,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       child: SvgPicture.asset(AssetResources.search),
                     ),
                   ),
-                  onTap: () {
-                    // print("ddd");
-                    // showPredictions();
-                  },
+                  onTap: () {},
                   keyboardType: TextInputType.visiblePassword,
                   onSaved: (val) {},
                 ),
@@ -74,6 +76,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           )
                         ]),
                   ),
+
                   Padding(
                     padding:
                         EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),

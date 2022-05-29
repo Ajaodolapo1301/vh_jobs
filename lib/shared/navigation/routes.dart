@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:vh_jobs/modules/appointments/appointment_chat.dart';
+import 'package:vh_jobs/modules/appointments/appointment_details.dart';
+import 'package:vh_jobs/modules/appointments/appointment_payment_successful.dart';
+import 'package:vh_jobs/modules/appointments/appointment_successful.dart';
+import 'package:vh_jobs/modules/appointments/meal_options.dart';
+import 'package:vh_jobs/modules/appointments/quotation.dart';
+import 'package:vh_jobs/modules/appointments/routes/route.dart';
+import 'package:vh_jobs/modules/appointments/schedule_appointment.dart';
+import 'package:vh_jobs/modules/appointments/widgets/choose_service_provider.dart';
 
 import '../../modules/auth/root.dart';
 import '../../modules/auth/route/routes.dart';
@@ -105,6 +114,28 @@ var routes = (RouteSettings settings) {
 
     case ProfileRoutes.addAddress:
       return FadeRoute(page: const AddAddress());
+
+    case AppointmentRoute.appointmentDetails:
+      Map args = settings.arguments as Map;
+      return FadeRoute(
+          page: AppointmentDetailsScreen(
+        appointment: args['appointment'],
+      ));
+
+    case AppointmentRoute.appointmentChooseProvider:
+      return FadeRoute(page: const ChooseServiceProviderScreen());
+    case AppointmentRoute.appointmentChat:
+      return FadeRoute(page: const AppointmentChatScreen());
+    case AppointmentRoute.appointmentMealOptions:
+      return FadeRoute(page: const MealOptionsScreen());
+    case AppointmentRoute.appointmentScheduleAppointment:
+      return FadeRoute(page: const ScheduleAppointmentScreen());
+    case AppointmentRoute.quotation:
+      return FadeRoute(page: const MealQoutationScreen());
+    case AppointmentRoute.appointmentPaymentSuccessful:
+      return FadeRoute(page: const AppointmentPaymentSuccessful());
+    case AppointmentRoute.appointmentStatus:
+      return FadeRoute(page: const AppointmentStatusScreen());
 
     case ProfileRoutes.security:
       return FadeRoute(page: const Security());
