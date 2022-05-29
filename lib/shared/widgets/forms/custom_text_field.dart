@@ -120,12 +120,11 @@ class CustomTextField extends FormField<String> {
                       Container(
                         child: Row(
                           children: [
-                            Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: SvgPicture.asset(prefix!)),
-                            SizedBox(
-                              width: 10.w,
-                            ),
+                            if (prefix != null)
+                              Padding(
+                                  padding:
+                                      EdgeInsets.only(left: 10.w, right: 10.w),
+                                  child: SvgPicture.asset(prefix)),
                             Expanded(
                               child: TextField(
                                 onTap: onTap,

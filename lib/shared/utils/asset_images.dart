@@ -14,7 +14,7 @@ class AssetResources {
 
   // HOME unselected
   static const unSelectedAppointment =
-      "assets/images/dashboard/appointment.svg";
+      "assets/images/home/appointment.svg";
   static const unSelectedOrder = "assets/images/home/order.svg";
   static const unSelectedProfile = "assets/images/home/profile.svg";
   static const unselectedHome = "assets/images/home/dashboard-outlined.svg";
@@ -61,4 +61,7 @@ class AssetResources {
   static const openEye = "assets/images/profile/open_eye.svg";
   static const secure = "assets/images/profile/portfolio_secure.png";
   static const search = "assets/images/profile/search.svg";
+
+  //appointment
+  static const anyone = "assets/images/appointment/any_sp.svg";
 }

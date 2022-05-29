@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vh_jobs/modules/orders/widget/order_widget.dart';
+import 'package:vh_jobs/shared/widgets/appbars/vhjob_appbar.dart';
 
 import '../../shared/utils/asset_images.dart';
 import '../../shared/utils/colors.dart';
@@ -20,6 +21,10 @@ class _Orders2State extends State<Orders2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: VhjobsAppBar(
+        elevation: 0,
+        centerTitle: true,
+      ),
       body: Column(
         children: [
           Container(

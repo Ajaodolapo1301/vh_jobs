@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:vh_jobs/shared/widgets/appbars/vhjob_appbar.dart';
 
 import '../../../shared/style/border_style.dart';
 import '../../../shared/style/font_style.dart';
@@ -19,6 +20,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: VhjobsAppBar(
+        elevation: 0,
+        centerTitle: true,
+      ),
       body: Container(
         child: SingleChildScrollView(
           child: Column(

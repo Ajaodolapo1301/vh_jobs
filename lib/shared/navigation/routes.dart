@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vh_jobs/modules/appointments/appointment_chat.dart';
+import 'package:vh_jobs/modules/appointments/appointment_details.dart';
+import 'package:vh_jobs/modules/appointments/routes/route.dart';
+import 'package:vh_jobs/modules/appointments/widgets/choose_service_provider.dart';
+import 'package:vh_jobs/modules/appointments/widgets/meal_options.dart';
 
 import '../../modules/auth/root.dart';
 import '../../modules/auth/route/routes.dart';
@@ -89,5 +94,19 @@ var routes = (RouteSettings settings) {
 
     case ProfileRoutes.addAddress:
       return FadeRoute(page: const AddAddress());
+
+    case AppointmentRoute.appointmentDetails:
+      Map args = settings.arguments as Map;
+      return FadeRoute(
+          page: AppointmentDetailsScreen(
+        appointment: args['appointment'],
+      ));
+
+    case AppointmentRoute.appointmentChooseProvider:
+      return FadeRoute(page: const ChooseServiceProviderScreen());
+    case AppointmentRoute.appointmentChat:
+      return FadeRoute(page: const AppointmentChatScreen());
+    case AppointmentRoute.appointmentMealOptions:
+      return FadeRoute(page: const MealOptionsScreen());
   }
 };
