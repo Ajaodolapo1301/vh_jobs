@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../modules/auth/root.dart';
 import '../../modules/auth/route/routes.dart';
+import '../../modules/classic/add_card.dart';
+import '../../modules/classic/route/root_classic.dart';
 import '../../modules/onboarding/root.dart';
 import '../../modules/onboarding/route/routes.dart';
 import '../../modules/onboarding/welcome_screen.dart';
@@ -71,7 +73,8 @@ var routes = (RouteSettings settings) {
     case ProfileRoutes.transactionHistory:
       return FadeRoute(page: const TransactionHistory());
 
-    case ProfileRoutes.transactionDetails:
-      return FadeRoute(page: const TransactionDetails());
+    case ClassicRoutes.rootClassic:
+      return FadeRoute(page: const AddCard ());
+
   }
 };

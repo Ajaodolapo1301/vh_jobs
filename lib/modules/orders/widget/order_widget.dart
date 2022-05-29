@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vh_jobs/config/app_startup.dart';
+import 'package:vh_jobs/modules/classic/root.dart';
+import 'package:vh_jobs/shared/navigation/navigation_service.dart';
 
 import '../../../shared/style/font_style.dart';
 import '../../../shared/utils/colors.dart';
 import '../../../shared/widgets/button.dart';
+import '../../onboarding/route/routes.dart';
 
 class OrderWidget extends StatelessWidget {
   final OrderModel orderModel;
@@ -25,19 +29,29 @@ class OrderWidget extends StatelessWidget {
                   style:
                       TextStyle(fontWeight: FontWeight.w900, fontSize: 15.sp),
                 ),
-                Container(
-                  padding: EdgeInsets.all(8.w),
-                  decoration: BoxDecoration(
-                      color: orderModel.isExpired!
-                          ? Colors.red
-                          : AppColors.vhGreen,
-                      borderRadius: BorderRadius.all(Radius.circular(5.r))),
-                  child: Text(
-                    orderModel.isExpired!
-                        ? "Expired"
-                        : '${orderModel.slots!.length} slots left',
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.white),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ClassicService()));
+                    // serviceLocator<NavigationService>()
+                    //     .to(routeName: OnboardingRoutes.ClassicService);
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(8.w),
+                    decoration: BoxDecoration(
+                        color: orderModel.isExpired!
+                            ? Colors.red
+                            : AppColors.vhGreen,
+                        borderRadius: BorderRadius.all(Radius.circular(5.r))),
+                    child: Text(
+                      orderModel.isExpired!
+                          ? "Expired"
+                          : '${orderModel.slots!.length} slots left',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.white),
+                    ),
                   ),
                 )
               ],
