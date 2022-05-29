@@ -14,11 +14,20 @@ class AssetResources {
 
   // HOME unselected
   static const unSelectedAppointment =
+      "assets/images/home/appointment.svg";
+  static const unSelectedOrder = "assets/images/home/order.svg";
+  static const unSelectedProfile = "assets/images/home/profile.svg";
+  static const unselectedHome =
+      "assets/images/home/dashboard-outlined.svg";
       "assets/images/dashboard/appointment.svg";
   static const unSelectedOrder = "assets/images/home/order.svg";
   static const unSelectedProfile = "assets/images/home/profile.svg";
   static const unselectedHome = "assets/images/home/dashboard-outlined.svg";
 
+  static const selectedAppointment = "assets/images/home/appointment.svg";
+  static const selectedOrder = "assets/images/home/selectedOrder.svg";
+  static const selectedProfile = "assets/images/home/selectedProfile.svg";
+  static const selectedHome = "assets/images/home/dashboard-filled.svg";
   static const selectedAppointment = "assets/images/home/appointment.svg";
   static const selectedOrder = "assets/images/home/selectedOrder.svg";
   static const selectedProfile = "assets/images/home/selectedProfile.svg";
@@ -70,6 +79,7 @@ class AssetResources {
   static const inflow = "assets/images/profile/inflow.svg";
   static const cardImage = "assets/images/profile/ovalBlue.png";
   static const calendar = "assets/images/profile/icons_calendar.svg";
+
   static const closedEye = "assets/images/profile/closed_eye.svg";
   static const openEye = "assets/images/profile/open_eye.svg";
   static const secure = "assets/images/profile/portfolio_secure.png";

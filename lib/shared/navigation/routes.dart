@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:vh_jobs/modules/profie/widget/IdentityVerification/utility_issue_id.dart';
 
 import '../../modules/auth/root.dart';
 import '../../modules/auth/route/routes.dart';
 import '../../modules/dashboard/route/routes.dart';
 import '../../modules/dashboard/widget/view_all.dart';
+import '../../modules/classic/add_card.dart';
+import '../../modules/classic/route/root_classic.dart';
 import '../../modules/onboarding/root.dart';
 import '../../modules/onboarding/route/routes.dart';
 import '../../modules/onboarding/welcome_screen.dart';
@@ -138,5 +139,8 @@ var routes = (RouteSettings settings) {
 
     case DashboardRoutes.viewAll:
       return FadeRoute(page: const ViewAll());
+    case ClassicRoutes.rootClassic:
+      return FadeRoute(page: const AddCard ());
+
   }
 };
