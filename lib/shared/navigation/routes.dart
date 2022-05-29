@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../modules/auth/root.dart';
 import '../../modules/auth/route/routes.dart';
-import '../../modules/dashboard/route/routes.dart';
-import '../../modules/dashboard/widget/view_all.dart';
 import '../../modules/classic/add_card.dart';
 import '../../modules/classic/route/root_classic.dart';
+import '../../modules/dashboard/route/routes.dart';
+import '../../modules/dashboard/widget/view_all.dart';
 import '../../modules/onboarding/root.dart';
 import '../../modules/onboarding/route/routes.dart';
 import '../../modules/onboarding/welcome_screen.dart';
@@ -19,6 +19,7 @@ import '../../modules/profie/widget/IdentityVerification/govt_issue_id.dart';
 import '../../modules/profie/widget/IdentityVerification/root.dart';
 import '../../modules/profie/widget/IdentityVerification/success_page.dart';
 import '../../modules/profie/widget/IdentityVerification/upload_page.dart';
+import '../../modules/profie/widget/IdentityVerification/utility_issue_id.dart';
 import '../../modules/profie/widget/manageAddress/add_address.dart';
 import '../../modules/profie/widget/manageAddress/address_list.dart';
 import '../../modules/profie/widget/manageAddress/root.dart';
@@ -139,8 +140,8 @@ var routes = (RouteSettings settings) {
 
     case DashboardRoutes.viewAll:
       return FadeRoute(page: const ViewAll());
-    case ClassicRoutes.rootClassic:
-      return FadeRoute(page: const AddCard ());
 
+    case ClassicRoutes.rootClassic:
+      return FadeRoute(page: const AddCard());
   }
 };
