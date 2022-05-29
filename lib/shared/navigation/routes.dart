@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../modules/auth/root.dart';
 import '../../modules/auth/route/routes.dart';
 import '../../modules/classic/add_card.dart';
+import '../../modules/classic/checkout.dart';
 import '../../modules/classic/route/root_classic.dart';
 import '../../modules/dashboard/route/routes.dart';
 import '../../modules/dashboard/widget/view_all.dart';
@@ -143,5 +144,8 @@ var routes = (RouteSettings settings) {
 
     case ClassicRoutes.rootClassic:
       return FadeRoute(page: const AddCard());
+
+    case ClassicRoutes.checkout:
+      return FadeRoute(page: const Checkout());
   }
 };

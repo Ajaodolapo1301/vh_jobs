@@ -20,6 +20,7 @@ class InputText extends StatefulWidget {
   final String? textPlaceholder;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
+  final bool useMargin;
   String? initialValue;
   final bool enabled;
   final TextEditingController? controller;
@@ -44,6 +45,7 @@ class InputText extends StatefulWidget {
     this.initialValue,
     this.enabled = true,
     this.controller,
+    this.useMargin = true,
     this.height = 1,
   }) : super(key: key);
 
@@ -151,6 +153,10 @@ class _InputTextState extends State<InputText> {
             if (widget.onTap != null) widget.onTap!();
           },
         ),
+        if (widget.useMargin)
+          SizedBox(
+            height: 20.h,
+          ),
       ],
     );
   }

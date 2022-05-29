@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vh_jobs/config/app_startup.dart';
 
+import '../../../shared/navigation/navigation_service.dart';
 import '../../../shared/style/font_style.dart';
 import '../../../shared/utils/colors.dart';
 import '../../../shared/widgets/button.dart';
+import '../../classic/route/root_classic.dart';
 
 class OrderWidget extends StatelessWidget {
   final OrderModel orderModel;
@@ -148,7 +151,10 @@ class OrderWidget extends StatelessWidget {
                   child: orderModel.isExpired!
                       ? VhJobsButton(
                           text: "Renew Package",
-                          onPressed: () {},
+                          onPressed: () {
+                            serviceLocator<NavigationService>()
+                                .to(routeName: ClassicRoutes.rootClassic);
+                          },
                           verticalPadding: 10.h,
                         )
                       : VhJobsButton(

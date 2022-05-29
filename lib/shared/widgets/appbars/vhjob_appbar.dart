@@ -117,7 +117,7 @@ class VhjobsAppBar extends StatelessWidget implements PreferredSizeWidget {
                                 color: AppColors.vhBlue,
                                 fontWeight: FontWeight.w700,
                                 height: 1.4)),
-            // centerTitle: centerTitle,
+            centerTitle: centerTitle,
             leading: leadingIcon ??
                 IconButton(
                   onPressed: () {

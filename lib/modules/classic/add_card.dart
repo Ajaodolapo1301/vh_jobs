@@ -1,10 +1,18 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vh_jobs/modules/classic/animated_swipe_button.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:vh_jobs/modules/classic/route/root_classic.dart';
 import 'package:vh_jobs/shared/widgets/button.dart';
+
+import '../../config/app_startup.dart';
+import '../../shared/navigation/navigation_service.dart';
+import '../../shared/style/font_style.dart';
+import '../../shared/utils/asset_images.dart';
+import '../../shared/utils/colors.dart';
+import '../../shared/widgets/appbars/vhjob_appbar.dart';
+import '../../shared/widgets/forms/input_text.dart';
 
 class AddCard extends StatelessWidget {
   const AddCard({Key? key}) : super(key: key);
@@ -12,14 +20,104 @@ class AddCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: VhjobsAppBar(),
       body: SafeArea(
           child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Image.asset('assets/images/onboarding/card.png'),
+            SizedBox(
+              height: 10.h,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: AppColors.vhBlue,
+                  borderRadius: BorderRadius.circular(5.r)),
+              height: 180.h,
+              width: double.infinity,
+              // padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 17.w),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(left: 20.w, top: 10.h),
+                          child: SvgPicture.asset(
+                            AssetResources.logoCard,
+                            height: 24.h,
+                          ),
+                        ),
+                        SvgPicture.asset(
+                          AssetResources.visa,
+                          height: 49.h,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "**** **** **** 1234",
+                            style: kBold400.copyWith(
+                                color: Colors.white, fontSize: 20.sp),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Credit/Debit card",
+                                style: kBold400.copyWith(
+                                    color: Colors.white, fontSize: 15.sp),
+                              ),
+                              Text(
+                                "Exp 01/23",
+                                style: kBold300.copyWith(
+                                    color: Colors.white, fontSize: 15.sp),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "John Doe",
+                                style: kBold300.copyWith(
+                                    color: Colors.white, fontSize: 18.sp),
+                              ),
+                              SvgPicture.asset(
+                                AssetResources.visa,
+                                height: 20.h,
+                                color: Colors.white,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ]),
+            ),
+            SizedBox(
+              height: 20.w,
+            ),
             Text(
               'Card Details',
               style: TextStyle(
@@ -31,145 +129,45 @@ class AddCard extends StatelessWidget {
               color: const Color(0xffB3D0E7),
               thickness: 1.sp,
             ),
+            SizedBox(
+              height: 20.w,
+            ),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  margin: EdgeInsets.only(left: 25.4),
-                  child: Text(
-                    'Cardholder Name',
-                    style: TextStyle(
-                        color: const Color(0xff061725),
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w700),
-                  ),
+                InputText(
+                  labelText: 'John Doe',
+                  headerText: "Cardholder Name",
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: TextField(
-                    maxLines: 1,
-                    minLines: 1,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          // ignore: prefer_const_constructors
-                          borderSide: BorderSide(
-                              color: const Color.fromARGB(255, 173, 173, 173)),
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        labelText: 'Hanaan Salaudeen',
-                        hintText: 'Enter Your Name'),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 25.4),
-                  child: Text(
-                    'Card Number',
-                    style: TextStyle(
-                        color: const Color(0xff061725),
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w700),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: TextField(
-                    textInputAction: TextInputAction.next,
-                    maxLines: 1,
-                    minLines: 1,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          // ignore: prefer_const_constructors
-                          borderSide: BorderSide(
-                            color: const Color.fromARGB(255, 173, 173, 173),
-                          ),
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        labelText: 'XXX XXX XXX 1223',
-                        hintText: 'Input your card number'),
-                    keyboardType: TextInputType.number,
-                    inputFormatters: <TextInputFormatter>[
-                      FilteringTextInputFormatter.digitsOnly,
-                      // Image.asset('name')
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(16.0),
-                    child: Row(
-                      children: [
-                        TextField(
-                          maxLines: 1,
-                          minLines: 1,
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                // ignore: prefer_const_constructors
-                                borderSide: BorderSide(
-                                  color:
-                                      const Color.fromARGB(255, 173, 173, 173),
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              labelText: 'MM/YY',
-                              hintText: 'Month/Year'),
-                          keyboardType: TextInputType.number,
-                          inputFormatters: <TextInputFormatter>[
-                            FilteringTextInputFormatter.digitsOnly,
-                            // Image.asset('name')
-                          ],
-                        ),
-                        Expanded(
-                          child: TextField(
-                            textInputAction: TextInputAction.next,
-                            maxLines: 1,
-                            minLines: 1,
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  // ignore: prefer_const_constructors
-                                  borderSide: BorderSide(
-                                    color: const Color.fromARGB(
-                                        255, 173, 173, 173),
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                labelText: 'XXX',
-                                hintText: ''),
-                            keyboardType: TextInputType.number,
-                            inputFormatters: <TextInputFormatter>[
-                              FilteringTextInputFormatter.digitsOnly,
-                              // Image.asset('name')
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                InputText(
+                  headerText: 'Card Number',
+                  labelText: "XXX  XXXX  XXXX  7115 ",
                 ),
                 Row(
                   children: [
-                    AnimatedSwipeButton(),
-                    SizedBox(
-                      width: 10.w,
+                    Expanded(
+                      child: InputText(
+                        headerText: 'Expiry',
+                        labelText: "MM/YY",
+                      ),
                     ),
-                    Text(
-                      'Save credit card details, it is safe',
-                      style: TextStyle(
-                          color: const Color(0xff061725),
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w400),
+                    SizedBox(
+                      width: 20.w,
+                    ),
+                    Expanded(
+                      child: InputText(
+                        headerText: 'CVV',
+                        labelText: "XXX",
+                      ),
                     )
                   ],
-                ),
+                )
               ],
             ),
             VhJobsButton(
                 text: "Add card",
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      // ignore: prefer_const_constructors
-                      MaterialPageRoute(builder: (context) => AddCard()));
-                  // serviceLocator<NavigationService>().to(routeName: ClassicRoutes.rootClassic);
+                  serviceLocator<NavigationService>()
+                      .to(routeName: ClassicRoutes.checkout);
                 }),
           ],
         ),
