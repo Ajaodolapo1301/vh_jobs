@@ -88,7 +88,7 @@ class TimelineNode extends StatelessWidget with StatusChangeTileNode {
     var indicatorPosition = this.indicatorPosition;
     indicatorPosition ??= (indicator is PositionedIndicator)
         ? (indicator as PositionedIndicator).getEffectivePosition(context)
-        : .5;
+        : .3;
     return indicatorPosition;
   }
 

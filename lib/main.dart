@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
-import 'package:vh_jobs/modules/appointments/routes/route.dart';
 
 import 'config/app_startup.dart';
+import 'modules/onboarding/route/routes.dart';
 import 'shared/navigation/navigation_service.dart';
 import 'shared/navigation/routes.dart';
 
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
             );
           },
           navigatorKey: GetIt.I<NavigationService>().navigatorKey,
-          initialRoute: AppointmentRoute.quotation,
+          initialRoute: OnboardingRoutes.root,
           onGenerateRoute: routes,
         );
       },

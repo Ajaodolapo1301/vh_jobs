@@ -76,7 +76,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           )
                         ]),
                   ),
-
                   Padding(
                     padding:
                         EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),

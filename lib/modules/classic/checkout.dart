@@ -64,11 +64,11 @@ class _CheckoutState extends State<Checkout> {
                             IndicatorThemeData(color: AppColors.vhBlue),
                         direction: Axis.horizontal,
                         connectorTheme: const ConnectorThemeData(
-                            space: 1.0, thickness: 1.0),
+                            space: 3.0, thickness: 2.0),
                       ),
                       builder: StatusChangeTileBuilder.connected(
                           contentWidgetBuilder: (context, index) {
-                            return SizedBox();
+                            return Container();
                           },
                           itemWidth: (_) =>
                               MediaQuery.of(context).size.width /

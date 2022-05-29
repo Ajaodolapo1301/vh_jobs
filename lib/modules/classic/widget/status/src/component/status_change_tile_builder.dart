@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:vh_jobs/modules/classic/widget/status/src/component/status_change_node.dart';
 import 'package:vh_jobs/modules/classic/widget/status/src/component/status_change_tile.dart';
 
+import '../../../../../../shared/utils/colors.dart';
+
 typedef IndexedValueBuilder<T> = T Function(int index);
 
 class StatusChangeTileBuilder {
@@ -87,7 +89,11 @@ class StatusChangeTileBuilder {
   }) {
     return (context, index) {
       if (index == 0) {
-        return SizedBox();
+        return Container(
+          color: AppColors.vhBlue,
+          // width: 100.w,
+          // height: 20.h,
+        );
       }
 
       return connectorBuilder?.call(index);
@@ -100,7 +106,11 @@ class StatusChangeTileBuilder {
   }) {
     return (context, index) {
       if (itemCount != null && index == itemCount - 1) {
-        return SizedBox();
+        return Container(
+          color: AppColors.vhBlue,
+          // width: 50.w,
+          // height: 20.h,
+        );
       }
 
       return connectorBuilder?.call(index + 1);

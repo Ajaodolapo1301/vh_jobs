@@ -13,8 +13,7 @@ class AssetResources {
   static const thickArrow = "assets/images/onboarding/thickArrow.svg";
 
   // HOME unselected
-  static const unSelectedAppointment =
-      "assets/images/home/appointment.svg";
+  static const unSelectedAppointment = "assets/images/home/appointment.svg";
   static const unSelectedOrder = "assets/images/home/order.svg";
   static const unSelectedProfile = "assets/images/home/profile.svg";
   static const unselectedHome = "assets/images/home/dashboard-outlined.svg";
