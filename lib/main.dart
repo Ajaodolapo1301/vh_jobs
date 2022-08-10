@@ -35,18 +35,19 @@ class MyApp extends StatelessWidget {
           ],
           // supportedLocales: S.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
-          title: "Go Mecho",
+          title: "Vh jobs",
           themeMode: ThemeMode.light,
           theme: ThemeData(
-            fontFamily: "Geomanist",
+            fontFamily: "Circular",
           ),
+          // ignore: prefer_const_literals_to_create_immutables
           navigatorObservers: [
             // FirebaseAnalyticsObserver(
             //   analytics: GetIt.I<AnalyticService>().instance,
             // ),
           ],
           builder: (context, widget) {
-            ScreenUtil.setContext(context);
+            ScreenUtil.init(context);
             return MediaQuery(
               data: MediaQuery.of(context),
               child: widget!,

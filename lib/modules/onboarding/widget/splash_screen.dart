@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen>
       if (status == AnimationStatus.completed) {
         GetIt.I
             .get<NavigationService>()
-            .to(routeName: OnboardingRoutes.welcomePage);
+            .to(routeName: OnboardingRoutes.onboardingScreen);
 
         // GetIt.I
         //     .get<NavigationService>()
